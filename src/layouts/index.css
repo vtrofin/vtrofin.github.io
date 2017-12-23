@@ -243,13 +243,13 @@ h2 {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1.45rem;
+  margin-bottom: 0.45rem;
   color: inherit;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
-  font-size: 1.62671rem;
+  font-size: 1rem;
   line-height: 1.1;
 }
 h3 {
@@ -382,7 +382,7 @@ p {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1.45rem;
+  margin-bottom: 1.1rem;
 }
 figure {
   margin-left: 0;
@@ -518,6 +518,7 @@ ol li {
 }
 ul li {
   padding-left: 0;
+  font-size: 1.1rem;
 }
 li > ol {
   margin-left: 1.45rem;
@@ -621,4 +622,120 @@ pre tt:after {
   html {
     font-size: 100%;
   }
+}
+
+/*My Css */
+.headerDiv  {
+  height: 50px;
+}
+.generalText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5rem
+}
+.generalText h1 {
+  font-size: 2.6rem;
+  margin-bottom: 1.5rem;
+}
+.generalText p {
+  font-size: 1.3rem;
+  -webkit-margin-after: 0.7rem;
+  margin-after: 0.7rem;
+}
+.profilePic {
+  text-align: center;
+}
+.profilePic img {
+  filter: grayscale(100%);
+  transition: .3s ease-in-out;
+}
+
+.profilePic img:hover {
+  filter: grayscale(0);
+}
+.sectionSubtitle {
+  border-bottom: 1px solid #c1c1c1;
+  margin-top: 65px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+.sectionSubtitle h2 {
+  font-size: 1rem;
+  text-indent: 10px;
+}
+ul.jobsUl {
+  list-style: none;
+  margin-left: 0.45rem !important;
+}
+.liJobItem:not(:first-child) {
+  margin-top: 2.5rem;
+}
+ul.jobItemUl {
+  list-style-type: disc;
+}
+.jobItem p {
+  -webkit-margin-after: 0.45rem;
+  margin-after: 0.45rem;
+}
+.jobItemFirstLine {
+  display: flex;
+  justify-content: space-between;
+}
+.jobItemFirstLine h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.25rem;
+}
+@media all and (min-width: 375px) {
+  .sectionSubtitle h2 {
+    font-size: 1.1rem;
+  }
+}
+@media all and (min-width: 414px) {
+  .sectionSubtitle h2 {
+    font-size: 1.2rem;
+  }
+}
+@media all and (min-width: 440px) {
+  .generalDetails {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .generalText {
+    justify-content: center;
+    align-items: flex-start;
+    width: 75%;
+  }
+  .generalText h1 {
+    font-size:  2rem;
+  }
+  .generalText p {
+    font-size: 1.1rem;
+  }
+}
+@media all and (min-width: 568px) {
+  .generalText {
+    padding-left: 20px;
+  }
+}
+@media all and (min-width: 667px) {
+  .generalText h1 {
+    font-size:  2.6rem;
+  }
+  .generalText p {
+    font-size: 1.3rem;
+  }
+  .sectionSubtitle h2 {
+    font-size: 1.3rem;
+  }
+}
+@media all and (min-width: 736px) {
+  .generalText {
+    padding-left: 40px;
+  }
+}
+@media all and (min-width: 768px) {
+
 }
