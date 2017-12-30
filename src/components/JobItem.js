@@ -16,7 +16,10 @@ const JobItem = (props) => {
 				<div>
 					<ul className='jobItemUl'>
 						{jobDescription.map((item, index) => (
-							<li key={index}>{item}</li>
+							<li 
+								key={index}
+								dangerouslySetInnerHTML={{__html: item}}
+							></li>
 						))}
 					</ul>
 				</div>

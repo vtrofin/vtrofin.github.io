@@ -5,7 +5,11 @@ const SimpleSection = (props) => {
 		<div className='simpleSection'>
 			<ul>
 				{props.content.map((item, index) => 
-					<li key={index}>{item}</li>
+					<li 
+						key={index} 
+						dangerouslySetInnerHTML={{__html: item}}
+					>
+					</li>
 				)}
 			</ul>
 		</div>
@@ -13,3 +17,4 @@ const SimpleSection = (props) => {
 }
 
 export default SimpleSection;
+

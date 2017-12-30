@@ -40,7 +40,7 @@ class IndexPage extends React.Component {
 				{
 					yearStart: '2003',
 					yearEnd: '2008',
-					school: 'Politehnica University of Bucharest – Faculty of Electrical Engineering'
+					school: 'Politehnica University of Bucharest – Faculty of Power Engineering'
 				}
 			],
 			jobs: [
@@ -50,7 +50,7 @@ class IndexPage extends React.Component {
 					yearEnd: '',
 					city: 'Kyoto',
 					jobTitle: 'Front End work for WordPress websites:',
-					jobDescription: ['Restyling components', 'Resizing and styling for mobile devices']
+					jobDescription: ['Restyling components for <a href="http://makersboot.camp/">Makers Bootcamp</a>', 'Resizing and styling for mobile devices for <a href="http://kyotomakersgarage.com/">Kyoto Makers Garage</a> and <a href="http://gvh-osaka.com/">GVH Osaka</a>']
 				},
 				{
 					company: 'Self-employed',
@@ -70,7 +70,7 @@ class IndexPage extends React.Component {
 				}*/,
 			],
 			other: [
-				'Sayonaranippon.com – my learning project made using ReactJS, React Router, Fetch API and Graphcool’s GraphQL API',
+				'<a href="https://www.sayonaranippon.com/">Sayonaranippon</a> – project made using ReactJS, React Router, Fetch API and Graphcool’s GraphQL API to practice my React theoretical knowledge',
 				'Active in the Kansai developers’ community: co-organizer of the Osaka Web Designers and Developers Meetup, taking part in Hacker News Kansai and React Osaka meetups',
 			],
 		}
