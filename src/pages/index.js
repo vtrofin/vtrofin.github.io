@@ -22,6 +22,7 @@ class IndexPage extends React.Component {
 				'JavaScript with emphasis on the React ecosystem, HTML, CSS and SASS, SQL',
 				'Fullstack React JS: React Router, Redux, GraphQL & GraphQL Server, Relay',
 				'Familiar with React Native',
+				'Familiar with Meteor',
 				'Unit Testing with Jest and Enzyme',
 				'Familiar with Webpack and Git',
 				'Problem solving oriented and strong business judgment',
