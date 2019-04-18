@@ -70,8 +70,8 @@ const jobs = [
 ];
 
 const other = [
-  '<a href="https://www.sayonaranippon.com/">Sayonaranippon</a> – project made using ReactJS, React Router, Fetch API and Graphcool’s GraphQL API to practice my React theoretical knowledge',
-  'Active in the Kansai developers’ community: co-organizer of the Osaka Web Designers and Developers Meetup, taking part in Hacker News Kansai and React Osaka meetups',
+  'Former co-organizer of the <a href="https://www.meetup.com/Osaka-Web-Designers-and-Developers-Meetup/">Osaka Web Designers and Developers</a> Meetup',
+  'Taking part in <a href="https://www.meetup.com/Hacker-News-Kansai/">Hacker News Kansai</a> Meetups',
 ];
 
 const IndexPage = props => {
@@ -85,6 +85,7 @@ const IndexPage = props => {
       <SectionSubtitle subtitleText="Employment history*" />
       <EmploymentSection jobs={jobs} />
       <SectionSubtitle subtitleText="Other activities and interests" />
+      <p>Active in the Kansai developers’ community:</p>
       <SimpleSection content={other} />
       <p style={{ fontStyle: 'italic' }}>*only relevant positions mentioned. </p>
     </Layout>
