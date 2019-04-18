@@ -8,7 +8,7 @@
     "deploy": "gatsby build --prefix-paths && gh-pages -d public",
     "gatsby": "gatsby",
     "build": "gatsby build",
-    "develop": "gatsby develop",
+    "develop": "gatsby develop -H 0.0.0.0",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\""
   },
   "keywords": [
