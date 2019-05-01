@@ -673,7 +673,28 @@ img#envelope-icon {
   flex-shrink: 2;
 }
 .profilePic img {
-  border-radius: 1%;
+  border-radius: 2%;
+}
+.about-container p {
+  margin-bottom: 0px;
+  font-size: 1.12rem;
+}
+.about-container.small {
+  display: block;
+}
+.about-container.large {
+  display: none;
+}
+.about-container.large p {
+  font-size: 1.12rem;
+  margin-right: 40px;
+  margin-top: 10px;
+  padding-top: 10px;
+  text-align: justify;
+  /*border-top: 1px solid #c1c1c1;*/
+}
+.about-container.small p {
+  text-align: justify;
 }
 .sectionSubtitle {
   border-bottom: 1px solid #c1c1c1;
@@ -757,17 +778,24 @@ ul.jobItemUl {
     padding-left: 40px;
   }
 }
-/* @media all and (min-width: 768px) {
-} */
+@media all and (min-width: 768px) {
+  .about-container.large {
+    display: block;
+  }
+  .about-container.small {
+    display: none;
+  }
+}
 
 /* .profilePic img {
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
-} */
+}
 
-/* .profilePic img:hover {
+.profilePic img:hover {
   -webkit-filter: grayscale(0);
   filter: grayscale(0);
-} */
+}
+*/

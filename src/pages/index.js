@@ -1,6 +1,7 @@
 import React from 'react';
 import Layout from '../components/Layout';
 import GeneralDetails from '../components/GeneralDetails';
+import About from '../components/About';
 import SectionSubtitle from '../components/SectionSubtitle';
 import SimpleSection from '../components/SimpleSection';
 import EducationSection from '../components/EducationSection';
@@ -14,17 +15,15 @@ const personalDetails = {
 };
 
 const skills = [
-  'JavaScript with emphasis on the React ecosystem, HTML, CSS and SASS, SQL',
-  'Fullstack React JS: React Router, Redux, GraphQL & GraphQL Server, Relay',
+  'Javascript ES6, Blazejs, React, Redux, Webpack, CSS, SASS',
+  'Node.js, Meteor, Express, MongoDB, SQL, familiar with Python',
+  'APIs: XML, REST, GraphQL',
+  'Unit testing with Mocha and Jest',
   'Familiar with React Native',
-  'Familiar with Meteor',
-  'Unit Testing with Jest and Enzyme',
-  'Familiar with Webpack and Git',
   'Problem solving oriented and strong business judgment',
-  'Good time management skills',
   'Strong sense of responsibility and very good adaptability',
-  'Self-learner',
   'Good communication and presentation skills',
+  'Good time management skills',
   'Languages spoken: Romanian – mother tongue, fluent in English, intermediate Italian, basic Japanese',
 ];
 
@@ -41,16 +40,58 @@ const education = [
   },
 ];
 
+const shipandco = {
+  description:
+    'Ship&co: Meteor app that enables users to compare shipping rates and print shipping labels',
+  achievements: [
+    'Integrated and upgraded REST and XML APIs into Ship&co: Shopify, Tradegecko, DHL, DHL Ecommerce Asia',
+    'Front-end side for the new pricing strategy, entailing the migration to monthly pricing plans',
+    'UI enhancements ',
+  ],
+};
+
+const stockandco = {
+  description:
+    'Stock&co: Meteor app that synchronizes product and inventory data across multiple Shopify stores',
+  achievements: [
+    'Modified the database structure to enable product synchronization across stores',
+    'Set-up REST API to enable inventory data synchronization with the warehouse',
+    'Implemented logging and Slack alerts',
+  ],
+};
+
+const internalApps = {
+  description:
+    'Ship&co staff: React/ REST API, Ship&co utils: Handlebars/ Node.js: apps for internal use with features such as KPIs, Github integration and e-commerce test orders creation',
+  achievements: [
+    'Implemented data exportation to CSV',
+    'API endpoint enhancements',
+    'UI enhancements',
+    'Feature to create test orders via the Tradegecko API',
+  ],
+};
+
 const jobs = [
+  {
+    company: 'Bento&co/ Ship&co',
+    yearStart: 'Feb 2018',
+    city: 'Kyoto',
+    jobTitle: 'Accomplishments:',
+    jobDescription: [
+      shipandco,
+      stockandco,
+      internalApps,
+      'Various UI enhancements on Bento&co Shopify stores',
+    ],
+  },
   {
     company: 'SmoothJapan',
     yearStart: 'Sep 2017',
-    yearEnd: '',
+    yearEnd: 'Dec 2017',
     city: 'Kyoto',
-    jobTitle: 'Front End work for WordPress websites:',
+    jobTitle: 'Front End work for WordPress',
     jobDescription: [
-      'Restyling components for <a href="http://makersboot.camp/">Makers Bootcamp</a>',
-      'Resizing and styling for mobile devices for <a href="http://kyotomakersgarage.com/">Kyoto Makers Garage</a> and <a href="http://gvh-osaka.com/">GVH Osaka</a>',
+      'Markup and CSS styling for various clients: Makers Bootcamp, Kyoto Makers Garage, GVH Osaka',
     ],
   },
   {
@@ -60,11 +101,8 @@ const jobs = [
     city: 'Bucharest',
     jobTitle: 'Managed several websites',
     jobDescription: [
-      'Managed contact with developers',
-      'Performed light development work in HTML, CSS, PHP',
-      'Sales and Marketing – prospected for new customers and advertisers',
-      'On-site SEO',
-      'Customer support',
+      'Light development tasks in HTML, CSS, PHP',
+      'Web marketing and customer support',
     ],
   },
 ];
@@ -78,6 +116,7 @@ const IndexPage = props => {
   return (
     <Layout>
       <GeneralDetails personalDetails={personalDetails} />
+      <About size="small" />
       <SectionSubtitle subtitleText="Skills and abilities profile" />
       <SimpleSection content={skills} />
       <SectionSubtitle subtitleText="Education" />
@@ -85,7 +124,7 @@ const IndexPage = props => {
       <SectionSubtitle subtitleText="Employment history*" />
       <EmploymentSection jobs={jobs} />
       <SectionSubtitle subtitleText="Other activities and interests" />
-      <p>Active in the Kansai developers’ community:</p>
+      <p>Active in the Kansai developer community:</p>
       <SimpleSection content={other} />
       <p style={{ fontStyle: 'italic' }}>*only relevant positions mentioned. </p>
     </Layout>
