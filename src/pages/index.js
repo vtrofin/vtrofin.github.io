@@ -77,10 +77,10 @@ const jobs = [
     yearStart: 'Feb 2018',
     city: 'Kyoto',
     jobDescription: [
+      //'Various UI enhancements on Bento&co Shopify stores',
       shipandco,
       stockandco,
       internalApps,
-      'Various UI enhancements on Bento&co Shopify stores',
     ],
   },
   {

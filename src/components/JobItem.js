@@ -3,18 +3,18 @@ import React from 'react';
 const JobTitle = ({ title }) => (title ? <p>{title}</p> : null);
 
 const LineItem = ({ item }) => {
-  if (typeof item === 'string') return <li dangerouslySetInnerHTML={{ __html: item }} />;
+  if (typeof item === 'string') return <li>{item}</li>;
 
   const { description, achievements } = item;
   return (
-    <div>
+    <li className="no-indent">
       {description}
-      <ul>
+      <ul className="achievements">
         {achievements.map((line, i) => (
-          <li key={i} dangerouslySetInnerHTML={{ __html: line }} />
+          <li key={i}>{line}</li>
         ))}
       </ul>
-    </div>
+    </li>
   );
 };
 
