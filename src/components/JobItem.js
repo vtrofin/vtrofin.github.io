@@ -25,11 +25,10 @@ const JobItem = ({ jobItem }) => {
     <li className="liJobItem">
       <div className="jobItem">
         <div className="jobItemFirstLine">
-          <h3>
-            {company} <span style={{ fontStyle: 'italic' }}>{city}</span>
-          </h3>
+          <h3>{company}</h3>
           <p>{`${yearStart} - ${yearEnd ? yearEnd : ''}`}</p>
         </div>
+        <p style={{ fontStyle: 'italic' }}>{city}</p>
         <JobTitle title={jobTitle} />
         <div>
           <ul className="jobItemUl">

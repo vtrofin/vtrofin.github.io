@@ -41,18 +41,16 @@ const education = [
 ];
 
 const shipandco = {
-  description:
-    'Ship&co: Meteor app that enables users to compare shipping rates and print shipping labels',
+  description: 'Ship&co: Meteor app that enables users to print shipping labels',
   achievements: [
-    'Integrated and upgraded REST and XML APIs into Ship&co: Shopify, Tradegecko, DHL, DHL Ecommerce Asia',
-    'Front-end side for the new pricing strategy, entailing the migration to monthly pricing plans',
+    'Integration/ enhancements of REST and XML APIs into Ship&co: Shopify, Tradegecko, DHL, DHL Ecommerce Asia',
+    //'Front-end side for the new pricing strategy, entailing the migration to monthly pricing plans',
     'UI enhancements ',
   ],
 };
 
 const stockandco = {
-  description:
-    'Stock&co: Meteor app that synchronizes product and inventory data across multiple Shopify stores',
+  description: 'Stock&co: Meteor app that synchronizes product data across multiple Shopify stores',
   achievements: [
     'Modified the database structure to enable product synchronization across stores',
     'Set-up REST API to enable inventory data synchronization with the warehouse',
@@ -62,11 +60,11 @@ const stockandco = {
 
 const internalApps = {
   description:
-    'Ship&co staff: React/ REST API, Ship&co utils: Handlebars/ Node.js: apps for internal use with features such as KPIs, Github integration and e-commerce test orders creation',
+    'Ship&co staff, Ship&co utils: React/ REST API and Handlebars/ Node.js apps for internal use',
   achievements: [
     'Implemented data exportation to CSV',
-    'API endpoint enhancements',
-    'UI enhancements',
+    //'API endpoint enhancements',
+    //'UI enhancements',
     'Feature to create test orders via the Tradegecko API',
   ],
 };
