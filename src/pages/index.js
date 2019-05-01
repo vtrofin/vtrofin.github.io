@@ -76,7 +76,6 @@ const jobs = [
     company: 'Bento&co/ Ship&co',
     yearStart: 'Feb 2018',
     city: 'Kyoto',
-    jobTitle: 'Accomplishments:',
     jobDescription: [
       shipandco,
       stockandco,

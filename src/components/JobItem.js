@@ -1,8 +1,9 @@
 import React from 'react';
 
+const JobTitle = ({ title }) => (title ? <p>{title}</p> : null);
+
 const LineItem = ({ item }) => {
-  const isObject = typeof item === 'object' && item !== null;
-  if (!isObject) return <li dangerouslySetInnerHTML={{ __html: item }} />;
+  if (typeof item === 'string') return <li dangerouslySetInnerHTML={{ __html: item }} />;
 
   const { description, achievements } = item;
   return (
@@ -18,7 +19,6 @@ const LineItem = ({ item }) => {
 };
 
 const JobItem = ({ jobItem }) => {
-  console.log('jobItem -->', jobItem);
   const { company, yearStart, yearEnd, city, jobTitle, jobDescription } = jobItem;
 
   return (
@@ -30,7 +30,7 @@ const JobItem = ({ jobItem }) => {
           </h3>
           <p>{`${yearStart} - ${yearEnd ? yearEnd : ''}`}</p>
         </div>
-        <p>{jobTitle}</p>
+        <JobTitle title={jobTitle} />
         <div>
           <ul className="jobItemUl">
             {jobDescription.map((item, i) => (
