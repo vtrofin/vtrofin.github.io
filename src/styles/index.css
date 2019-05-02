@@ -689,10 +689,7 @@ img#envelope-icon {
 .about-container.large p {
   font-size: 1.12rem;
   margin-right: 40px;
-  /* margin-top: 10px;
-  padding-top: 10px; */
   text-align: justify;
-  /*border-top: 1px solid #c1c1c1;*/
 }
 .about-container.small p {
   text-align: justify;

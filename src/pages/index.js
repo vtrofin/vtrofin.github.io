@@ -123,7 +123,7 @@ const IndexPage = props => {
       <SectionSubtitle subtitleText="Other activities and interests" />
       <p>Active in the Kansai developer community:</p>
       <SimpleSection content={other} />
-      <p style={{ fontStyle: 'italic' }}>*only relevant positions mentioned. </p>
+      <p style={{ fontStyle: 'italic', marginTop: '3rem' }}>*only relevant positions mentioned. </p>
     </Layout>
   );
 };
