@@ -121,7 +121,7 @@ const IndexPage = props => {
       <SectionSubtitle subtitleText="Employment history*" />
       <EmploymentSection jobs={jobs} />
       <SectionSubtitle subtitleText="Other activities and interests" />
-      <p>Active in the Kansai developer community:</p>
+      <p style={{ fontSize: '1.1rem' }}>Active in the Kansai developer community:</p>
       <SimpleSection content={other} />
       <p style={{ fontStyle: 'italic', marginTop: '3rem' }}>*only relevant positions mentioned. </p>
     </Layout>
