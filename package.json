@@ -1,0 +1,40 @@
+{
+  "name": "vtrofin.github.io",
+  "version": "1.0.0",
+  "description": "My homepage",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
+    "gatsby": "gatsby",
+    "build": "gatsby build",
+    "develop": "gatsby develop -H 0.0.0.0",
+    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\""
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vtrofin/vtrofin.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vtrofin/vtrofin.github.io/issues"
+  },
+  "homepage": "https://github.com/vtrofin/vtrofin.github.io#readme",
+  "devDependencies": {
+    "gatsby-cli": "^2.5.5",
+    "gh-pages": "^2.0.1",
+    "react-helmet": "^5.2.0"
+  },
+  "dependencies": {
+    "date-fns": "^1.30.1",
+    "gatsby": "^2.3.15",
+    "gatsby-link": "^2.0.16",
+    "gatsby-plugin-react-helmet": "^3.0.12",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  }
+}
