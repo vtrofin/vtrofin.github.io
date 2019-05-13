@@ -29,7 +29,7 @@ const GeneralDetails = props => {
         <p>{location}</p>
         <p>{phone}</p>
         <div className="contacts">
-          <a href={`mailto:${email}?Subject=Hello%20Victor`} target="_top">
+          <a href={`mailto:${email}`} target="_top">
             <img src={envelope} alt="email" id="envelope-icon" />
           </a>
           <a href="https://github.com/vtrofin">

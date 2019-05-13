@@ -5,13 +5,14 @@ import '../styles/index.css';
 const Layout = ({ children }) => (
   <div>
     <Helmet
-      title="Victor Trofin"
+      title="Victor Trofin, web developer in Japan"
       meta={[
         {
           name: 'description',
-          content: 'Front end engineer located in Kansai area looking for work',
+          content:
+            'Web developer in Kyoto, Japan. Currently at Ship&co, working with Meteor and ReactJS',
         },
-        { name: 'keywords', content: 'CV, front end, Kyoto' },
+        { name: 'keywords', content: 'React, Meteor, Node.js, Express, CV, Kyoto' },
       ]}
     />
     <div className="layout">{children}</div>

@@ -15,7 +15,7 @@ const personalDetails = {
 };
 
 const skills = [
-  'Javascript ES6, Blazejs, React, Redux, Webpack, CSS, SASS',
+  'Javascript ES6, Handlebars.js, React, Redux, Webpack, CSS, SASS',
   'Node.js, Meteor, Express, MongoDB, SQL, familiar with Python',
   'APIs: XML, REST, GraphQL',
   'Unit testing with Mocha and Jest',
@@ -71,7 +71,7 @@ const internalApps = {
 
 const jobs = [
   {
-    company: 'Bento&co/ Ship&co',
+    company: 'Ship&co',
     yearStart: 'Feb 2018',
     city: 'Kyoto',
     jobDescription: [
@@ -105,8 +105,8 @@ const jobs = [
 ];
 
 const other = [
-  'Former co-organizer of the <a href="https://www.meetup.com/Osaka-Web-Designers-and-Developers-Meetup/">Osaka Web Designers and Developers</a> Meetup',
-  'Taking part in <a href="https://www.meetup.com/Hacker-News-Kansai/">Hacker News Kansai</a> Meetups',
+  'Active member of the Kansai foreign developer community: <a href="https://www.meetup.com/Osaka-Web-Designers-and-Developers-Meetup/">Osaka Web Designers and Developers</a> and <a href="https://www.meetup.com/Hacker-News-Kansai/">Hacker News Kansai</a>',
+  'I spend my free time making a <a href="https://github.com/vtrofin/takezo">personal blog</a> with NextJS and a GraphQL API',
 ];
 
 const IndexPage = props => {
@@ -121,7 +121,6 @@ const IndexPage = props => {
       <SectionSubtitle subtitleText="Employment history*" />
       <EmploymentSection jobs={jobs} />
       <SectionSubtitle subtitleText="Other activities and interests" />
-      <p style={{ fontSize: '1.1rem' }}>Active in the Kansai developer community:</p>
       <SimpleSection content={other} />
       <p style={{ fontStyle: 'italic', marginTop: '3rem' }}>*only relevant positions mentioned. </p>
     </Layout>

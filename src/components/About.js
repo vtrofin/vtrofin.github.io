@@ -9,8 +9,8 @@ const About = ({ size }) => {
         <a href="https://www.shipandco.com" target="_blank" rel="noopener noreferrer">
           Ship&co
         </a>
-        , an awesome startup that is the best way to get shipping quotes and print shipping labels
-        from Japan.
+        , an awesome ecommerce startup that is the best way to get shipping quotes and print
+        shipping labels from Japan.
       </p>
     </div>
   );
