@@ -32,10 +32,10 @@ const GeneralDetails = props => {
         <p>{phone}</p>
         <div className="contacts">
           <a href={`mailto:${email}`} target="_top">
-            <img src={envelope} alt="email" id="envelope-icon" />
+            <img src={envelope} alt="email" id="envelope-icon" loading="lazy" />
           </a>
           <a href="https://github.com/vtrofin">
-            <img src={githubIco} alt="github profile" id="git-icon" />
+            <img src={githubIco} alt="github profile" id="git-icon" loading="lazy" />
           </a>
         </div>
       </div>

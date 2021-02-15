@@ -10,7 +10,7 @@ const Layout = ({ children }) => (
         {
           name: 'description',
           content:
-            'Web engineer in Kyoto, Japan. Currently at Ship&co, working with Meteor, Vue.js and React',
+            'Full-stack web engineer in Kyoto, Japan. Currently at Ship&co, working with Node.js, Vue.js and React',
         },
         { name: 'keywords', content: 'React, Vue.js, Node.js, CV, Kyoto' },
       ]}

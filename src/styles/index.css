@@ -670,6 +670,7 @@ img#envelope-icon {
 .profilePic {
   text-align: center;
   margin-top: 30px;
+  margin-bottom: 30px;
   flex-shrink: 2;
 }
 .profilePic img {
@@ -751,13 +752,15 @@ ul.achievements {
     justify-content: center;
     align-items: flex-start;
     width: 75%;
+    padding-left: 20px;
+    padding-right: 20px;
   }
-  .generalText,
   .about-container {
     padding-left: 20px;
   }
   .profilePic {
     flex-shrink: 3;
+    margin-top: 0;
   }
   .generalText h1 {
     font-size: 2.6rem;
@@ -769,12 +772,7 @@ ul.achievements {
     font-size: 1.3rem;
   }
 }
-@media all and (min-width: 736px) {
-  .generalText,
-  .about-container {
-    padding-left: 40px;
-  }
-}
+
 @media all and (min-width: 768px) {
   .about-container.large {
     display: block;
