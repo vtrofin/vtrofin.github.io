@@ -14,12 +14,16 @@ const personalDetails = {
   phone: '+81-80-4496-5881',
 };
 
-const skills = [
-  'Javascript ES6, Handlebars.js, React, Redux, Webpack, CSS, SASS',
-  'Node.js, Meteor, Express, MongoDB, SQL, familiar with Python',
+const technicalSkills = [
+  'Programming Languages: Javascript, Node.js, Python, Go',
+  'Front-end: React, Vue.js, Handlebars, Next.js, Gatsby, CSS, SASS',
+  'Back-end: Express, Feathers JS, Fastify, Vercel serverless, Meteor, MongoDB, SQL',
   'APIs: XML, REST, GraphQL',
   'Unit testing with Mocha and Jest',
-  'Familiar with React Native',
+  'Familiar with React Native, Kotlin',
+];
+
+const skills = [
   'Problem solving oriented and strong business judgment',
   'Strong sense of responsibility and very good adaptability',
   'Good communication and presentation skills',
@@ -114,7 +118,9 @@ const IndexPage = props => {
     <Layout>
       <GeneralDetails personalDetails={personalDetails} />
       <About />
-      <SectionSubtitle subtitleText="Skills and abilities profile" />
+      <SectionSubtitle subtitleText="Technical Skills" />
+      <SimpleSection content={technicalSkills} />
+      <SectionSubtitle subtitleText="Abilities" />
       <SimpleSection content={skills} />
       <SectionSubtitle subtitleText="Education" />
       <EducationSection education={education} />
