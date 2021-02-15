@@ -641,7 +641,7 @@ pre tt:after {
 .generalText {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   margin-bottom: 0.5rem;
 }
@@ -741,7 +741,8 @@ ul.achievements {
     font-size: 1.2rem;
   }
 }
-@media all and (min-width: 440px) {
+
+@media all and (min-width: 600px) {
   .generalDetails {
     flex-direction: row;
     justify-content: space-between;
@@ -751,19 +752,10 @@ ul.achievements {
     align-items: flex-start;
     width: 75%;
   }
-  .generalText h1 {
-    font-size: 2rem;
-  }
-  .generalText p {
-    font-size: 1.1rem;
-  }
-}
-@media all and (min-width: 568px) {
-  .generalText {
+  .generalText,
+  .about-container {
     padding-left: 20px;
   }
-}
-@media all and (min-width: 667px) {
   .profilePic {
     flex-shrink: 3;
   }
@@ -778,7 +770,8 @@ ul.achievements {
   }
 }
 @media all and (min-width: 736px) {
-  .generalText {
+  .generalText,
+  .about-container {
     padding-left: 40px;
   }
 }

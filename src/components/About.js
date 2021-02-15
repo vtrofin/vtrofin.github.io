@@ -5,12 +5,12 @@ const About = ({ size }) => {
   return (
     <div className={className}>
       <p>
+        My area of expertise, not limited to, lies in building systems for e-commerce and logistics.
         I work at{' '}
         <a href="https://www.shipandco.com" target="_blank" rel="noopener noreferrer">
           Ship&co
         </a>
-        , an awesome ecommerce startup that is the best way to get shipping quotes and print
-        shipping labels from Japan.
+        , an awesome startup building an all-in-one shipping management solution for e-commerce.{' '}
       </p>
     </div>
   );

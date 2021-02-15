@@ -113,7 +113,7 @@ const IndexPage = props => {
   return (
     <Layout>
       <GeneralDetails personalDetails={personalDetails} />
-      <About size="small" />
+      <About />
       <SectionSubtitle subtitleText="Skills and abilities profile" />
       <SimpleSection content={skills} />
       <SectionSubtitle subtitleText="Education" />
