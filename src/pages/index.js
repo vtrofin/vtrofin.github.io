@@ -109,8 +109,8 @@ const jobs = [
 ];
 
 const other = [
-  'Active member of the Kansai foreign developer community: <a href="https://www.meetup.com/Osaka-Web-Designers-and-Developers-Meetup/">Osaka Web Designers and Developers</a> and <a href="https://www.meetup.com/Hacker-News-Kansai/">Hacker News Kansai</a>',
-  'I spend my free time making a <a href="https://github.com/vtrofin/takezo">personal blog</a> with NextJS and a GraphQL API',
+  'Active in the Kansai developer community: <a href="https://www.meetup.com/Osaka-Web-Designers-and-Developers-Meetup/">Osaka Web Designers and Developers</a> and <a href="https://www.meetup.com/Hacker-News-Kansai/">Hacker News Kansai</a>',
+  'I spend my free time gaining knowledge in Machine Learning',
 ];
 
 const IndexPage = props => {
