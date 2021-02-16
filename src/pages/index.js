@@ -45,72 +45,86 @@ const education = [
 ];
 
 const shipandco = {
-  description: 'Ship&co: Meteor app that enables users to print shipping labels',
+  description: 'Ship&co: Web app to compare shipping rates and create shipping labels',
   achievements: [
-    'Integration/ enhancements of REST and XML APIs into Ship&co: Shopify, Tradegecko, DHL, DHL Ecommerce Asia',
-    //'Front-end side for the new pricing strategy, entailing the migration to monthly pricing plans',
-    'UI enhancements '
+    'Integration of API and major releases: Shopify, QuickBook Commerce , DHL, DHL eCommerce Asia, Yamato',
+    'Implement new pricing strategy: build the UI and back-end bug fixes',
+    'Implement GDPR requirements: download and delete user data',
+    'Implement scheduling of Pickups in Ship&co'
   ]
 };
 
 const stockandco = {
-  description: 'Stock&co: Meteor app that synchronizes product data across multiple Shopify stores',
+  description: 'Stock&co: Shopify app that syncs products and inventory across multiple stores',
   achievements: [
-    'Modified the database structure to enable product synchronization across stores',
-    'Set-up REST API to enable inventory data synchronization with the warehouse',
-    'Implemented logging and Slack alerts'
+    'Restructure the database to enable synchronization across stores',
+    'Set-up REST API with endpoints for product and inventory synchronization',
+    'Implemented user validation, logging and Slack alerts'
   ]
 };
 
 const internalApps = {
-  description:
-    'Ship&co staff, Ship&co utils: React/ REST API and Handlebars/ Node.js apps for internal use',
-  achievements: [
-    'Implemented data exportation to CSV',
-    //'API endpoint enhancements',
-    //'UI enhancements',
-    'Feature to create test orders via the Tradegecko API'
-  ]
+  description: 'Ship&Co Internal apps and Bento&Co',
+  achievements: ['UI and back-end enhancements and performance optimizations']
 };
 
 const jobs = [
   {
-    company: 'Ship&co',
+    company: 'BertrandCo',
     yearStart: 'Feb 2018',
-    city: 'Kyoto',
-    jobDescription: [
-      //'Various UI enhancements on Bento&co Shopify stores',
-      shipandco,
-      stockandco,
-      internalApps
-    ]
+    // city: 'Kyoto',
+    jobTitle: 'Full-stack web engineer, Kyoto',
+    jobDescription: [shipandco, stockandco, internalApps]
   },
   {
     company: 'SmoothJapan',
     yearStart: 'Sep 2017',
     yearEnd: 'Dec 2017',
-    city: 'Kyoto',
-    jobTitle: 'Front End work for WordPress',
+    jobTitle: 'Web engineer, Kyoto',
     jobDescription: [
       'Markup and CSS styling for various clients: Makers Bootcamp, Kyoto Makers Garage, GVH Osaka'
     ]
   },
   {
+    company: 'Universal Campus | 京進の英会話教室 ユニバーサルキャンパス',
+    yearStart: '2016',
+    yearEnd: '2018',
+    jobTitle: 'English teacher, Kyoto',
+    jobDescription: ['Taught English while re-focusing my career towards web-engineering']
+  },
+  {
     company: 'Self-employed',
     yearStart: '2011',
     yearEnd: '2015',
-    city: 'Bucharest',
-    jobTitle: 'Managed several websites',
+    jobTitle: 'Managed several websites, Bucharest',
     jobDescription: [
-      'Light development tasks in HTML, CSS, PHP',
-      'Web marketing and customer support'
+      'Light development tasks in HTML, CSS and PHP, web marketing and customer support'
+    ]
+  },
+  {
+    company: 'CII Group',
+    yearStart: '2009',
+    yearEnd: '2011',
+    jobTitle: 'Consultant, Bucharest',
+    jobDescription: [
+      'Organizational restructuring and project management in the field of logistics'
+    ]
+  },
+  {
+    company: 'Roland Berger Strategy Consultants',
+    yearStart: '2008',
+    yearEnd: '2009',
+    jobTitle: 'Business Analyst, Bucharest',
+    jobDescription: [
+      'Strategy consulting and organizational restructuring in the fields of manufacturing and logistics'
     ]
   }
 ];
 
 const other = [
   'Active in the Kansai developer community: <a href="https://www.meetup.com/Osaka-Web-Designers-and-Developers-Meetup/">Osaka Web Designers and Developers</a> and <a href="https://www.meetup.com/Hacker-News-Kansai/">Hacker News Kansai</a>',
-  'I spend my free time gaining knowledge in Machine Learning'
+  'I spend my free time gaining knowledge in Machine Learning',
+  'Alumnus of Board of European Students of Technology'
 ];
 
 const IndexPage = props => {
