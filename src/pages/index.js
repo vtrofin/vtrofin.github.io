@@ -141,6 +141,7 @@ const IndexPage = props => {
       <div class="page-break" />
       <SectionSubtitle subtitleText="Employment history" />
       <EmploymentSection jobs={jobs} />
+      <div class="page-break" />
       <SectionSubtitle subtitleText="Other activities and interests" />
       <SimpleSection content={other} />
     </Layout>
