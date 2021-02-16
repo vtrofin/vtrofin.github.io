@@ -1,4 +1,5 @@
 import React from 'react';
+import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import GeneralDetails from '../components/GeneralDetails';
 import About from '../components/About';
@@ -9,9 +10,7 @@ import EmploymentSection from '../components/EmploymentSection';
 
 const personalDetails = {
   name: 'Victor Trofin',
-  location: 'Kyoto, Japan',
-  email: 'trofin.victor@gmail.com',
-  phone: '+81-80-4496-5881'
+  location: 'Kyoto, Japan'
 };
 
 const technicalSkills = [
@@ -144,7 +143,13 @@ const IndexPage = props => {
 
   return (
     <Layout>
-      <GeneralDetails personalDetails={personalDetails} />
+      <GeneralDetails
+        personalDetails={{
+          ...personalDetails,
+          email: props.data.site.siteMetadata.email,
+          phone: props.data.site.siteMetadata.phone
+        }}
+      />
       <About />
       <SectionSubtitle subtitleText="Technical Skills" />
       <SimpleSection content={technicalSkills} />
@@ -163,3 +168,14 @@ const IndexPage = props => {
 };
 
 export default IndexPage;
+
+export const query = graphql`
+  query {
+    site {
+      siteMetadata {
+        phone
+        email
+      }
+    }
+  }
+`;
