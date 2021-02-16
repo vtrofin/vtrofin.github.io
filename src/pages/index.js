@@ -20,7 +20,7 @@ const technicalSkills = [
   'Back-end: Express, Feathers JS, Fastify, Vercel serverless, Meteor, MongoDB, SQL',
   'APIs: XML, REST, GraphQL',
   'Unit testing with Mocha and Jest',
-  'Familiar with React Native, Kotlin'
+  'Familiar with React Native and Kotlin'
 ];
 
 const skills = [
