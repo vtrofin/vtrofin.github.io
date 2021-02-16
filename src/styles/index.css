@@ -653,6 +653,16 @@ pre tt:after {
   font-size: 1.3rem;
   margin-bottom: 0.7rem;
 }
+
+.phone-number-button {
+  cursor: pointer;
+  border-radius: 3px;
+  background-color: #f2f2f2;
+  padding: 0.2rem 0.5rem;
+  font-size: 1.3rem;
+  margin-bottom: 0.7rem;
+}
+
 .contacts a {
   display: inline-block;
   vertical-align: middle;

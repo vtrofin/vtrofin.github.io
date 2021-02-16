@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { differenceInYears } from 'date-fns';
 import Photo from './Photo';
 import profilePic from '../images/victor.jpg';
@@ -19,6 +19,25 @@ const getAge = () => {
   return age;
 };
 
+const Phone = ({ phone }) => {
+  const [clicked, setClick] = useState(false);
+
+  window.addEventListener('afterprint', event => {
+    setClick(false);
+  });
+  window.addEventListener('beforeprint', event => {
+    setClick(true);
+  });
+
+  return clicked ? (
+    <p className="phone-number">{phone}</p>
+  ) : (
+    <div className="phone-number-button" onClick={() => setClick(true)}>
+      Phone number
+    </div>
+  );
+};
+
 const GeneralDetails = props => {
   const { name, location, email, phone } = props.personalDetails;
   return (
@@ -29,7 +48,7 @@ const GeneralDetails = props => {
         <p>Romanian national living in {location}</p>
         <p>Married, one child</p>
         <p>Age: {getAge()}</p>
-        <p>{phone}</p>
+        <Phone phone={phone} />
         <div className="contacts">
           <a href={`mailto:${email}`} target="_top">
             <img src={envelope} alt="email" id="envelope-icon" loading="lazy" />
