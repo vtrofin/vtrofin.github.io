@@ -46,7 +46,7 @@ const education = [
 const shipandco = {
   description: 'Ship&co: Web app to compare shipping rates and create shipping labels',
   achievements: [
-    'Integration of API and major releases: Shopify, QuickBook Commerce , DHL, DHL eCommerce Asia, Yamato',
+    'Integration of API and major releases: Shopify, QuickBook Commerce, DHL, DHL eCommerce Asia, Yamato',
     'Implement new pricing strategy: build the UI and back-end bug fixes',
     'Implement GDPR requirements: download and delete user data',
     'Implement scheduling of Pickups in Ship&co'
@@ -80,9 +80,7 @@ const jobs = [
     yearStart: 'Sep 2017',
     yearEnd: 'Dec 2017',
     jobTitle: 'Web engineer, Kyoto',
-    jobDescription: [
-      'Markup and CSS styling for various clients: Makers Bootcamp, Kyoto Makers Garage, GVH Osaka'
-    ]
+    jobDescription: ['Markup for various clients: Makers Bootcamp, Kyoto Makers Garage, GVH Osaka']
   },
   {
     company: 'Universal Campus | 京進の英会話教室 ユニバーサルキャンパス',

@@ -10,9 +10,9 @@ const Layout = ({ children }) => (
         {
           name: 'description',
           content:
-            'Full-stack web engineer in Kyoto, Japan. Currently at Ship&co, working with Node.js, Vue.js and React',
+            'Full-stack web engineer in Kyoto, Japan. Currently at Ship&co, working with Node.js, Vue.js and React'
         },
-        { name: 'keywords', content: 'React, Vue.js, Node.js, CV, Kyoto' },
+        { name: 'keywords', content: 'React, Vue.js, Node.js, CV, Kyoto' }
       ]}
     />
     <div className="layout">{children}</div>
