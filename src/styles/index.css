@@ -869,27 +869,35 @@ ul.achievements {
     font-size: 0.8rem;
     margin-bottom: 0.1rem;
   }
-  .jobItemFirstLine h3 {
-    font-size: 0.8rem;
-  }
-  .jobItemUl li.no-indent {
-    padding: 0.2rem 0;
-  }
   .sectionSubtitle {
     margin-top: 30px;
   }
   .sectionSubtitle h2 {
     font-size: 1rem;
   }
+  .jobItemFirstLine h3 {
+    font-size: 0.8rem;
+    margin-bottom: 0;
+  }
+  .jobItemUl li.no-indent {
+    padding: 0.2rem 0;
+  }
+  ul.achievements {
+    margin-top: 0;
+  }
+  .jobItem p.employment-years {
+    margin-bottom: 0;
+  }
   .liJobItem:not(:first-child) {
-    margin-top: 0.5rem;
+    margin-top: 1.5rem;
   }
   .footer-text {
     margin-top: 1rem;
   }
-}
-
-@media print and (min-width: 210mm) {
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
 }
 
 /* .profilePic img {

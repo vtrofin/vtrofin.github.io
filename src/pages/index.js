@@ -139,7 +139,7 @@ const IndexPage = props => {
       <SectionSubtitle subtitleText="Education" />
       <EducationSection education={education} />
       <div class="page-break" />
-      <SectionSubtitle subtitleText="Employment history*" />
+      <SectionSubtitle subtitleText="Employment history" />
       <EmploymentSection jobs={jobs} />
       <SectionSubtitle subtitleText="Other activities and interests" />
       <SimpleSection content={other} />
