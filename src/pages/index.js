@@ -132,7 +132,7 @@ const IndexPage = props => {
   const isChrome = /chrome/gi.test(agent);
   const isSafari = /safari/gi.test(agent);
   const isBot = /bot|googlebot|crawler|spider|robot|crawling|google|baidu|bing|msn|teoma|slurp|yandex/i.test(
-    navigator.userAgent
+    window.navigator.userAgent
   );
 
   let pageBreakClass = 'page-break';
