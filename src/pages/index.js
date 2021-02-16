@@ -131,6 +131,9 @@ const IndexPage = props => {
   const isFirefox = /firefox/gi.test(agent);
   const isChrome = /chrome/gi.test(agent);
   const isSafari = /safari/gi.test(agent);
+  const isBot = /bot|googlebot|crawler|spider|robot|crawling|google|baidu|bing|msn|teoma|slurp|yandex/i.test(
+    navigator.userAgent
+  );
 
   let pageBreakClass = 'page-break';
   if (isFirefox) {
@@ -146,8 +149,8 @@ const IndexPage = props => {
       <GeneralDetails
         personalDetails={{
           ...personalDetails,
-          email: props.data.site.siteMetadata.email,
-          phone: props.data.site.siteMetadata.phone
+          email: isBot ? '' : props.data.site.siteMetadata.email,
+          phone: isBot ? '' : props.data.site.siteMetadata.phone
         }}
       />
       <About />
