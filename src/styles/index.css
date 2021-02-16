@@ -907,19 +907,6 @@ ul.achievements {
     color: inherit;
   }
 }
-@media print and (min-height: 125vw) and (max-height: 135vw) {
-  .page-break.no-letter {
-    display: none;
-    page-break-before: avoid;
-  }
-}
-
-/* @media print and (min-height: 125vw) and (max-height: 135vw) {
-  https://stackoverflow.com/questions/51813424/css-media-queries-for-print-paper-size/51840111
-  .page-break {
-    display: none;
-  }
-} */
 
 /* .profilePic img {
   -webkit-filter: grayscale(100%);
