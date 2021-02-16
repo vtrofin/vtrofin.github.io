@@ -128,6 +128,20 @@ const other = [
 ];
 
 const IndexPage = props => {
+  const agent = window.navigator.userAgent;
+  const isFirefox = /firefox/gi.test(agent);
+  const isChrome = /chrome/gi.test(agent);
+  const isSafari = /safari/gi.test(agent);
+
+  let pageBreakClass = 'page-break';
+  if (isFirefox) {
+    pageBreakClass += ' firefox';
+  } else if (isChrome) {
+    pageBreakClass += ' chrome';
+  } else if (!isChrome && isSafari) {
+    pageBreakClass += ' safari';
+  }
+
   return (
     <Layout>
       <GeneralDetails personalDetails={personalDetails} />
@@ -138,10 +152,10 @@ const IndexPage = props => {
       <SimpleSection content={skills} />
       <SectionSubtitle subtitleText="Education" />
       <EducationSection education={education} />
-      <div class="page-break" />
+      <div className={pageBreakClass + ' top'} />
       <SectionSubtitle subtitleText="Employment history" />
       <EmploymentSection jobs={jobs} />
-      <div class="page-break" />
+      <div className={pageBreakClass + ' bottom'} />
       <SectionSubtitle subtitleText="Other activities and interests" />
       <SimpleSection content={other} />
     </Layout>

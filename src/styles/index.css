@@ -828,10 +828,16 @@ ul.achievements {
     padding-top: 0;
     margin-top: 0;
   }
-  .page-break {
+  .page-break.chrome,
+  .page-break.firefox {
     display: block;
     page-break-before: always;
   }
+  .page-break.chrome.bottom,
+  .page-break.firefox.bottom {
+    page-break-before: avoid;
+  }
+
   .generalDetails {
     flex-direction: row;
     justify-content: space-between;
@@ -899,6 +905,12 @@ ul.achievements {
   a {
     text-decoration: none;
     color: inherit;
+  }
+}
+@media print and (min-height: 125vw) and (max-height: 135vw) {
+  .page-break.no-letter {
+    display: none;
+    page-break-before: avoid;
   }
 }
 

@@ -26,7 +26,7 @@ const JobItem = ({ jobItem }) => {
       <div className="jobItem">
         <div className="jobItemFirstLine">
           <h3>{company}</h3>
-          <p class="employment-years">{`${yearStart} - ${yearEnd ? yearEnd : ''}`}</p>
+          <p className="employment-years">{`${yearStart} - ${yearEnd ? yearEnd : ''}`}</p>
         </div>
         {city && <p style={{ fontStyle: 'italic' }}>{city}</p>}
         <JobTitle title={jobTitle} />
