@@ -815,10 +815,20 @@ ul.achievements {
     display: none;
   }
 }
+@media all {
+  .page-break {
+    display: none;
+  }
+}
 
 @media print {
+  /* basic print support for A4 paper */
   .layout {
     padding-bottom: 0;
+  }
+  .page-break {
+    display: block;
+    page-break-before: always;
   }
   .generalDetails {
     flex-direction: row;
@@ -862,6 +872,9 @@ ul.achievements {
   .jobItemFirstLine h3 {
     font-size: 0.8rem;
   }
+  .jobItemUl li.no-indent {
+    padding: 0.2rem 0;
+  }
   .sectionSubtitle {
     margin-top: 30px;
   }
@@ -876,14 +889,8 @@ ul.achievements {
   }
 }
 
-/* @media print and (min-width: 210mm) {
-  https://developers.google.com/web/tools/chrome-devtools/css/print-preview
-  https://stackoverflow.com/questions/1664049/can-i-force-a-page-break-in-html-printing/1664058
-  https://www.swiftpublisher.com/useful-articles/paper-sizes-and-formats-explained#:~:text=The%20B%20paper%20sizes%20are,is%20between%20A4%20and%20A5.&text=That%20is%2C%20a%20sheet%20of,the%20A%20and%20B%20series.
-  .sectionSubtitle:last-of-type {
-    page-break-before: always;
-  }
-} */
+@media print and (min-width: 210mm) {
+}
 
 /* .profilePic img {
   -webkit-filter: grayscale(100%);
