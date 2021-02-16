@@ -12,3 +12,5 @@ PHONE=your phone number
 EMAIL=your email address
 MAIN_SITE= url to the referring website
 ```
+
+Need to create an .env file for production as well
