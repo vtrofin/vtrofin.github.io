@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { differenceInYears } from 'date-fns';
+import Phone from './Phone';
 import Photo from './Photo';
 import profilePic from '../images/victor.jpg';
 import githubIco from '../images/ico-github.svg';
@@ -17,25 +18,6 @@ const getAge = () => {
     return month >= 9 && day >= 5 ? safariAge : safariAge - 1;
   }
   return age;
-};
-
-const Phone = ({ phone }) => {
-  const [clicked, setClick] = useState(false);
-
-  window.addEventListener('afterprint', event => {
-    setClick(false);
-  });
-  window.addEventListener('beforeprint', event => {
-    setClick(true);
-  });
-
-  return clicked ? (
-    <p className="phone-number">{phone}</p>
-  ) : (
-    <div className="phone-number-button" onClick={() => setClick(true)}>
-      Phone number
-    </div>
-  );
 };
 
 const GeneralDetails = props => {
