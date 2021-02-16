@@ -31,6 +31,7 @@ const GeneralDetails = props => {
         <p>Married, one child</p>
         <p>Age: {getAge()}</p>
         <Phone phone={phone} />
+        <p className="paper-email">{email}</p>
         <div className="contacts">
           <a href={`mailto:${email}`} target="_top">
             <img src={envelope} alt="email" id="envelope-icon" loading="lazy" />

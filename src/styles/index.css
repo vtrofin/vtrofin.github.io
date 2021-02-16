@@ -653,7 +653,9 @@ pre tt:after {
   font-size: 1.3rem;
   margin-bottom: 0.7rem;
 }
-
+.paper-email {
+  display: none;
+}
 .phone-number-button {
   cursor: pointer;
   border-radius: 3px;
@@ -760,6 +762,10 @@ ul.achievements {
   font-size: 1.2rem;
   margin-bottom: 0.25rem;
 }
+.footer-text {
+  font-style: italic;
+  margin-top: 3rem;
+}
 @media all and (min-width: 375px) {
   .sectionSubtitle h2 {
     font-size: 1.1rem;
@@ -809,6 +815,75 @@ ul.achievements {
     display: none;
   }
 }
+
+@media print {
+  .layout {
+    padding-bottom: 0;
+  }
+  .generalDetails {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .generalText {
+    justify-content: center;
+    align-items: flex-start;
+    width: 75%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .about-container {
+    padding-left: 20px;
+  }
+  .contacts,
+  .phone-number-button {
+    display: none;
+  }
+  .paper-email {
+    display: block;
+  }
+  .profilePic {
+    flex-shrink: 3;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .generalText h1 {
+    font-size: 2rem;
+  }
+  .generalText h3 {
+    font-size: 1.5rem;
+  }
+  .generalText p,
+  .about-container p,
+  ul li,
+  .footer-text {
+    font-size: 0.8rem;
+    margin-bottom: 0.1rem;
+  }
+  .jobItemFirstLine h3 {
+    font-size: 0.8rem;
+  }
+  .sectionSubtitle {
+    margin-top: 30px;
+  }
+  .sectionSubtitle h2 {
+    font-size: 1rem;
+  }
+  .liJobItem:not(:first-child) {
+    margin-top: 0.5rem;
+  }
+  .footer-text {
+    margin-top: 1rem;
+  }
+}
+
+/* @media print and (min-width: 210mm) {
+  https://developers.google.com/web/tools/chrome-devtools/css/print-preview
+  https://stackoverflow.com/questions/1664049/can-i-force-a-page-break-in-html-printing/1664058
+  https://www.swiftpublisher.com/useful-articles/paper-sizes-and-formats-explained#:~:text=The%20B%20paper%20sizes%20are,is%20between%20A4%20and%20A5.&text=That%20is%2C%20a%20sheet%20of,the%20A%20and%20B%20series.
+  .sectionSubtitle:last-of-type {
+    page-break-before: always;
+  }
+} */
 
 /* .profilePic img {
   -webkit-filter: grayscale(100%);
