@@ -1,7 +1,7 @@
 import React from 'react';
 import { differenceInYears } from 'date-fns';
+import Phone from './Phone';
 import Photo from './Photo';
-import About from './About';
 import profilePic from '../images/victor.jpg';
 import githubIco from '../images/ico-github.svg';
 import envelope from '../images/envelope.svg';
@@ -12,7 +12,7 @@ const getAge = () => {
   const age = differenceInYears(today, birthdate);
   if (isNaN(age)) {
     // date fns seems to fail in safari
-    const month = today.getMonth();
+    const month = today.getMonth() + 1;
     const day = today.getDay();
     const safariAge = today.getFullYear() - 1984;
     return month >= 9 && day >= 5 ? safariAge : safariAge - 1;
@@ -26,18 +26,20 @@ const GeneralDetails = props => {
     <div className="generalDetails">
       <div className="generalText">
         <h1>{name}</h1>
-        <p>{location}</p>
-        <p>{phone}</p>
+        <h3>トロフィン ビクトル</h3>
+        <p>Romanian national living in {location}</p>
+        <p>Married, one child</p>
+        <p>Age: {getAge()}</p>
+        <Phone phone={phone} />
+        <p className="paper-email">{email}</p>
         <div className="contacts">
           <a href={`mailto:${email}`} target="_top">
-            <img src={envelope} alt="email" id="envelope-icon" />
+            <img src={envelope} alt="email" id="envelope-icon" loading="lazy" />
           </a>
           <a href="https://github.com/vtrofin">
-            <img src={githubIco} alt="github profile" id="git-icon" />
+            <img src={githubIco} alt="github profile" id="git-icon" loading="lazy" />
           </a>
         </div>
-        <p>Age: {getAge()}</p>
-        <About size="large" />
       </div>
       <Photo src={profilePic} />
     </div>

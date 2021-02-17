@@ -641,7 +641,7 @@ pre tt:after {
 .generalText {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   margin-bottom: 0.5rem;
 }
@@ -653,6 +653,36 @@ pre tt:after {
   font-size: 1.3rem;
   margin-bottom: 0.7rem;
 }
+.paper-email {
+  display: none;
+}
+.phone-number-button {
+  cursor: pointer;
+  border-radius: 3px;
+  background-color: #f2f2f2;
+  padding: 0.2rem 0.5rem;
+  font-size: 1.3rem;
+  margin-bottom: 0.7rem;
+}
+
+.phone-number-enter {
+  opacity: 0;
+  transform: scale(0.9);
+}
+.phone-number-enter-active {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  transition: opacity 300ms, transform 300ms;
+}
+.phone-number-exit {
+  opacity: 1;
+}
+.phone-number-exit-active {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 300ms, transform 300ms;
+}
+
 .contacts a {
   display: inline-block;
   vertical-align: middle;
@@ -670,6 +700,7 @@ img#envelope-icon {
 .profilePic {
   text-align: center;
   margin-top: 30px;
+  margin-bottom: 30px;
   flex-shrink: 2;
 }
 .profilePic img {
@@ -731,6 +762,10 @@ ul.achievements {
   font-size: 1.2rem;
   margin-bottom: 0.25rem;
 }
+.footer-text {
+  font-style: italic;
+  margin-top: 3rem;
+}
 @media all and (min-width: 375px) {
   .sectionSubtitle h2 {
     font-size: 1.1rem;
@@ -741,7 +776,8 @@ ul.achievements {
     font-size: 1.2rem;
   }
 }
-@media all and (min-width: 440px) {
+
+@media all and (min-width: 600px) {
   .generalDetails {
     flex-direction: row;
     justify-content: space-between;
@@ -750,22 +786,15 @@ ul.achievements {
     justify-content: center;
     align-items: flex-start;
     width: 75%;
+    padding-left: 20px;
+    padding-right: 20px;
   }
-  .generalText h1 {
-    font-size: 2rem;
-  }
-  .generalText p {
-    font-size: 1.1rem;
-  }
-}
-@media all and (min-width: 568px) {
-  .generalText {
+  .about-container {
     padding-left: 20px;
   }
-}
-@media all and (min-width: 667px) {
   .profilePic {
     flex-shrink: 3;
+    margin-top: 0;
   }
   .generalText h1 {
     font-size: 2.6rem;
@@ -777,17 +806,105 @@ ul.achievements {
     font-size: 1.3rem;
   }
 }
-@media all and (min-width: 736px) {
-  .generalText {
-    padding-left: 40px;
-  }
-}
+
 @media all and (min-width: 768px) {
   .about-container.large {
     display: block;
   }
   .about-container.small {
     display: none;
+  }
+}
+@media all {
+  .page-break {
+    display: none;
+  }
+}
+
+@media print {
+  /* basic print support for A4 paper */
+  .layout {
+    padding-bottom: 0;
+    padding-top: 0;
+    margin-top: 0;
+  }
+  .page-break.chrome,
+  .page-break.firefox {
+    display: block;
+    page-break-before: always;
+  }
+  .page-break.chrome.bottom,
+  .page-break.firefox.bottom {
+    page-break-before: avoid;
+  }
+
+  .generalDetails {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .generalText {
+    justify-content: center;
+    align-items: flex-start;
+    width: 75%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .about-container {
+    padding-left: 20px;
+  }
+  .contacts,
+  .phone-number-button {
+    display: none;
+  }
+  .paper-email {
+    display: block;
+  }
+  .profilePic {
+    flex-shrink: 3;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .generalText h1 {
+    font-size: 2rem;
+  }
+  .generalText h3 {
+    font-size: 1.5rem;
+  }
+  .generalText p,
+  .about-container p,
+  ul li,
+  .footer-text {
+    font-size: 0.8rem;
+    margin-bottom: 0.1rem;
+  }
+  .sectionSubtitle {
+    margin-top: 30px;
+  }
+  .sectionSubtitle h2 {
+    font-size: 1rem;
+  }
+  .jobItemFirstLine h3 {
+    font-size: 0.8rem;
+    margin-bottom: 0;
+  }
+  .jobItemUl li.no-indent {
+    padding: 0.2rem 0;
+  }
+  ul.achievements {
+    margin-top: 0;
+  }
+  .jobItem p.employment-years {
+    margin-bottom: 0;
+  }
+  .liJobItem:not(:first-child) {
+    margin-top: 1.5rem;
+  }
+  .footer-text {
+    margin-top: 1rem;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
   }
 }
 
