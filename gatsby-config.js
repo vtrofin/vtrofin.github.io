@@ -3,7 +3,7 @@ require('dotenv').config({ path: `.env.${activeEnv}` });
 console.log(`Using environment config: '${activeEnv}'`);
 
 module.exports = {
-  pathPrefix: '/vtrofin.github.io',
+  pathPrefix: '/',
   siteMetadata: {
     title: `Gatsby Default Starter`,
     phone: process.env.PHONE,
