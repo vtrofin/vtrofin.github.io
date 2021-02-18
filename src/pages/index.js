@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import GeneralDetails from '../components/GeneralDetails';
@@ -10,7 +10,7 @@ import EmploymentSection from '../components/EmploymentSection';
 
 const personalDetails = {
   name: 'Victor Trofin',
-  location: 'Kyoto, Japan'
+  location: 'Kyoto, Japan',
 };
 
 const technicalSkills = [
@@ -19,7 +19,7 @@ const technicalSkills = [
   'Back-end: Express, Feathers JS, Fastify, Vercel serverless, Meteor, MongoDB, SQL',
   'APIs: XML, REST, GraphQL',
   'Unit testing with Mocha and Jest',
-  'Familiar with React Native and Kotlin'
+  'Familiar with React Native and Kotlin',
 ];
 
 const skills = [
@@ -27,20 +27,20 @@ const skills = [
   'Strong sense of responsibility and very good adaptability',
   'Good communication and presentation skills',
   'Good time management skills',
-  'Languages spoken: Romanian – mother tongue, fluent in English, intermediate Italian, basic Japanese'
+  'Languages spoken: Romanian – mother tongue, fluent in English, intermediate Italian, basic Japanese',
 ];
 
 const education = [
   {
     yearStart: '2009',
     yearEnd: '2013',
-    school: 'Bucharest University of Economic Studies – Master in International Business'
+    school: 'Bucharest University of Economic Studies – Master in International Business',
   },
   {
     yearStart: '2003',
     yearEnd: '2008',
-    school: 'Politehnica University of Bucharest – Faculty of Power Engineering'
-  }
+    school: 'Politehnica University of Bucharest – Faculty of Power Engineering',
+  },
 ];
 
 const shipandco = {
@@ -49,8 +49,8 @@ const shipandco = {
     'Integration of API and major releases: Shopify, QuickBook Commerce, DHL, DHL eCommerce Asia, Yamato',
     'Implement new pricing strategy: build the UI and back-end bug fixes',
     'Implement GDPR requirements: download and delete user data',
-    'Implement scheduling of Pickups in Ship&co'
-  ]
+    'Implement scheduling of Pickups in Ship&co',
+  ],
 };
 
 const stockandco = {
@@ -58,13 +58,13 @@ const stockandco = {
   achievements: [
     'Restructure the database to enable synchronization across stores',
     'Set-up REST API with endpoints for product and inventory synchronization',
-    'Implemented user validation, logging and Slack alerts'
-  ]
+    'Implemented user validation, logging and Slack alerts',
+  ],
 };
 
 const internalApps = {
   description: 'Ship&Co Internal apps and Bento&Co',
-  achievements: ['UI and back-end enhancements and performance optimizations']
+  achievements: ['UI and back-end enhancements and performance optimizations'],
 };
 
 const jobs = [
@@ -73,21 +73,21 @@ const jobs = [
     yearStart: 'Feb 2018',
     // city: 'Kyoto',
     jobTitle: 'Full-stack web engineer, Kyoto',
-    jobDescription: [shipandco, stockandco, internalApps]
+    jobDescription: [shipandco, stockandco, internalApps],
   },
   {
     company: 'SmoothJapan',
     yearStart: 'Sep 2017',
     yearEnd: 'Dec 2017',
     jobTitle: 'Web engineer, Kyoto',
-    jobDescription: ['Markup for various clients: Makers Bootcamp, Kyoto Makers Garage, GVH Osaka']
+    jobDescription: ['Markup for various clients: Makers Bootcamp, Kyoto Makers Garage, GVH Osaka'],
   },
   {
     company: 'Universal Campus | 京進の英会話教室 ユニバーサルキャンパス',
     yearStart: '2016',
     yearEnd: '2018',
     jobTitle: 'English teacher, Kyoto',
-    jobDescription: ['Taught English while re-focusing my career towards web-engineering']
+    jobDescription: ['Taught English while re-focusing my career towards web-engineering'],
   },
   {
     company: 'Self-employed',
@@ -95,8 +95,8 @@ const jobs = [
     yearEnd: '2015',
     jobTitle: 'Managed several websites, Bucharest',
     jobDescription: [
-      'Light development tasks in HTML, CSS and PHP, web marketing and customer support'
-    ]
+      'Light development tasks in HTML, CSS and PHP, web marketing and customer support',
+    ],
   },
   {
     company: 'CII Group',
@@ -104,8 +104,8 @@ const jobs = [
     yearEnd: '2011',
     jobTitle: 'Consultant, Bucharest',
     jobDescription: [
-      'Organizational restructuring and project management in the field of logistics'
-    ]
+      'Organizational restructuring and project management in the field of logistics',
+    ],
   },
   {
     company: 'Roland Berger Strategy Consultants',
@@ -113,34 +113,39 @@ const jobs = [
     yearEnd: '2009',
     jobTitle: 'Business Analyst, Bucharest',
     jobDescription: [
-      'Strategy consulting and organizational restructuring in the fields of manufacturing and logistics'
-    ]
-  }
+      'Strategy consulting and organizational restructuring in the fields of manufacturing and logistics',
+    ],
+  },
 ];
 
 const other = [
   'Active in the Kansai developer community: <a href="https://www.meetup.com/Osaka-Web-Designers-and-Developers-Meetup/">Osaka Web Designers and Developers</a> and <a href="https://www.meetup.com/Hacker-News-Kansai/">Hacker News Kansai</a>',
   'I spend my free time gaining knowledge in Machine Learning',
-  'Alumnus of Board of European Students of Technology'
+  'Alumnus of Board of European Students of Technology',
 ];
 
 const IndexPage = props => {
-  const agent = window.navigator.userAgent;
-  const isFirefox = /firefox/gi.test(agent);
-  const isChrome = /chrome/gi.test(agent);
-  const isSafari = /safari/gi.test(agent);
-  const isBot = /bot|googlebot|crawler|spider|robot|crawling|google|baidu|bing|msn|teoma|slurp|yandex/i.test(
-    window.navigator.userAgent
-  );
+  const [pageBreakClass, setPageBreakClass] = useState('page-break');
+  const [isBot, setIsBot] = useState(false);
 
-  let pageBreakClass = 'page-break';
-  if (isFirefox) {
-    pageBreakClass += ' firefox';
-  } else if (isChrome) {
-    pageBreakClass += ' chrome';
-  } else if (!isChrome && isSafari) {
-    pageBreakClass += ' safari';
-  }
+  useEffect(() => {
+    const agent = window.navigator.userAgent;
+    const isFirefox = /firefox/gi.test(agent);
+    const isChrome = /chrome/gi.test(agent);
+    const isSafari = /safari/gi.test(agent);
+    const bot = /bot|googlebot|crawler|spider|robot|crawling|google|baidu|bing|msn|teoma|slurp|yandex/i.test(
+      window.navigator.userAgent
+    );
+    setIsBot(bot);
+
+    if (isFirefox) {
+      setPageBreakClass(pageBreakClass + ' firefox');
+    } else if (isChrome) {
+      setPageBreakClass(pageBreakClass + ' chrome');
+    } else if (!isChrome && isSafari) {
+      setPageBreakClass(pageBreakClass + ' safari');
+    }
+  }, []);
 
   return (
     <Layout>
@@ -148,7 +153,7 @@ const IndexPage = props => {
         personalDetails={{
           ...personalDetails,
           email: isBot ? '' : props.data.site.siteMetadata.email,
-          phone: isBot ? '' : props.data.site.siteMetadata.phone
+          phone: isBot ? '' : props.data.site.siteMetadata.phone,
         }}
       />
       <About />
