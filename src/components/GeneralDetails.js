@@ -2,7 +2,7 @@ import React from 'react';
 import { differenceInYears } from 'date-fns';
 import Phone from './Phone';
 import Photo from './Photo';
-import profilePic from '../images/victor.jpg';
+import profilePic from '../images/victor_light_yellow.jpg';
 import githubIco from '../images/ico-github.svg';
 import envelope from '../images/envelope.svg';
 
