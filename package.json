@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/vtrofin/vtrofin.github.io#readme",
   "devDependencies": {
-    "gatsby-cli": "^2.5.5",
+    "gatsby-cli": "^5.7.0",
     "gh-pages": "^2.0.1",
     "react-helmet": "^5.2.0"
   },
