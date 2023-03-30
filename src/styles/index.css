@@ -829,12 +829,15 @@ ul.achievements {
     margin-top: 0;
   }
   .page-break.chrome,
-  .page-break.firefox {
+  .page-break.firefox,
+  .page-break.safari
+   {
     display: block;
     page-break-before: always;
   }
   .page-break.chrome.bottom,
-  .page-break.firefox.bottom {
+  .page-break.firefox.bottom,
+  .page-break.safari.bottom {
     page-break-before: avoid;
   }
 
@@ -864,11 +867,16 @@ ul.achievements {
     margin-top: 0;
     margin-bottom: 0;
   }
+  .profilePic img {
+    width: 80%;
+  }
   .generalText h1 {
     font-size: 2rem;
+    margin-bottom: 1rem;
   }
   .generalText h3 {
     font-size: 1.5rem;
+    margin-bottom: 1rem;
   }
   .generalText p,
   .about-container p,
@@ -878,7 +886,8 @@ ul.achievements {
     margin-bottom: 0.1rem;
   }
   .sectionSubtitle {
-    margin-top: 30px;
+    margin-top: 16px;
+    margin-bottom: 12px;
   }
   .sectionSubtitle h2 {
     font-size: 1rem;

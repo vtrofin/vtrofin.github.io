@@ -1,13 +1,13 @@
-import React from 'react';
-import { differenceInYears } from 'date-fns';
-import Phone from './Phone';
-import Photo from './Photo';
-import profilePic from '../images/victor_light_yellow.jpg';
-import githubIco from '../images/ico-github.svg';
-import envelope from '../images/envelope.svg';
+import React from "react";
+import { differenceInYears } from "date-fns";
+import Phone from "./Phone";
+import Photo from "./Photo";
+import profilePic from "../images/victor_light_yellow.jpg";
+import githubIco from "../images/ico-github.svg";
+import envelope from "../images/envelope.svg";
 
 const getAge = () => {
-  const birthdate = new Date('1984-09-05T06:00:00+0200');
+  const birthdate = new Date("1984-09-05T06:00:00+0200");
   const today = new Date();
   const age = differenceInYears(today, birthdate);
   if (isNaN(age)) {
@@ -20,7 +20,7 @@ const getAge = () => {
   return age;
 };
 
-const GeneralDetails = props => {
+const GeneralDetails = (props) => {
   const { name, location, email, phone } = props.personalDetails;
   return (
     <div className="generalDetails">
@@ -37,7 +37,12 @@ const GeneralDetails = props => {
             <img src={envelope} alt="email" id="envelope-icon" loading="lazy" />
           </a>
           <a href="https://github.com/vtrofin">
-            <img src={githubIco} alt="github profile" id="git-icon" loading="lazy" />
+            <img
+              src={githubIco}
+              alt="github profile"
+              id="git-icon"
+              loading="lazy"
+            />
           </a>
         </div>
       </div>
