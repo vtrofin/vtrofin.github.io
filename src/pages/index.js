@@ -56,7 +56,7 @@ const shipandco = {
 };
 
 const ats = {
-  description: "Bluum.jp: Applicant tracking system",
+  description: "Bluum Hire: Applicant tracking system",
   achievements: [
     "Implemented UI features and major releases with ReScript, Tailwind CSS and Next.js",
     "Implemented GraphQL API features with TypeScript, Prisma and Fastify",
