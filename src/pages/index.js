@@ -139,7 +139,7 @@ const IndexPage = (props) => {
       setIsSafari(true);
       setPageBreakClass(pageBreakClass + " safari");
     }
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <Layout>

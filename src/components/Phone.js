@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { CSSTransition } from 'react-transition-group';
+import React, { useState, useEffect } from "react";
+import { CSSTransition } from "react-transition-group";
 
 const Phone = ({ phone }) => {
   const [showNumber, setShowNumber] = useState(false);
@@ -8,19 +8,23 @@ const Phone = ({ phone }) => {
   // minor transition issue on afterprint but not a big deal
   // expected behavior -> button to render after transition ended
   useEffect(() => {
-    window.addEventListener('beforeprint', event => setShowNumber(true));
-    window.addEventListener('afterprint', event => setShowNumber(false));
+    window.addEventListener("beforeprint", (event) => setShowNumber(true));
+    window.addEventListener("afterprint", (event) => setShowNumber(false));
 
     return () => {
-      window.removeEventListener('beforeprint', event => setShowNumber(true));
-      window.removeEventListener('afterprint', event => setShowNumber(false));
+      window.removeEventListener("beforeprint", (event) => setShowNumber(true));
+      window.removeEventListener("afterprint", (event) => setShowNumber(false));
     };
   }, []);
 
   return (
     <div>
       {!showNumber && (
-        <div className="phone-number-button" onClick={() => setShowNumber(true)}>
+        // eslint-disable-next-line
+        <div
+          className="phone-number-button"
+          onClick={() => setShowNumber(true)}
+        >
           Phone number
         </div>
       )}
