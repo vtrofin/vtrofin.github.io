@@ -1,19 +1,24 @@
 import React, { useState, useEffect } from "react";
 import { graphql } from "gatsby";
-import Layout from "../components/Layout";
-import GeneralDetails from "../components/GeneralDetails";
-import About from "../components/About";
-import SectionSubtitle from "../components/SectionSubtitle";
-import SimpleSection from "../components/SimpleSection";
-import EducationSection from "../components/EducationSection";
-import EmploymentSection from "../components/EmploymentSection";
+import Layout from "@components/Layout";
+import GeneralDetails from "@components/GeneralDetails";
+import About from "@components/About";
+import SectionSubtitle from "@components/SectionSubtitle";
+import SimpleSection from "@components/SimpleSection";
+import EducationSection from "@components/EducationSection";
+import EmploymentSection from "@components/EmploymentSection";
+import {
+  EducationItemType,
+  JobDescriptionType,
+  JobItemType,
+} from "@typedefs/propTypes";
 
 const personalDetails = {
   name: "Victor Trofin",
   location: "Kyoto, Japan",
 };
 
-const technicalSkills = [
+const technicalSkills: string[] = [
   "Proficient in TypeScript, Node.js, ReScript; Swift (personal project); Rust, Python, Go (basic)",
   "Skilled in front-end development using React, Next.js, CSS, Tailwind; Vue.js, Gatsby,  SwiftUI (personal project)",
   "Experienced in back-end development using Fastify, Express, MongoDB, PostgreSQL, Prisma ORM, Redis PubSub, WebSocket",
@@ -22,7 +27,7 @@ const technicalSkills = [
   "Competent in testing using Mocha, Jest, UVU",
 ];
 
-const skills = [
+const skills: string[] = [
   "Analytical thinker capable of identifying solutions aligned with business needs",
   "Strong sense of responsibility and very good adaptability",
   "Good communication and presentation skills",
@@ -30,7 +35,7 @@ const skills = [
   "Languages spoken: Romanian – mother tongue, fluent in English, basic Japanese",
 ];
 
-const education = [
+const education: EducationItemType[] = [
   {
     yearStart: "2009",
     yearEnd: "2013",
@@ -45,7 +50,7 @@ const education = [
   },
 ];
 
-const shipandco = {
+const shipandco: JobDescriptionType = {
   description:
     "Ship&co: Web app to compare shipping rates and create shipping labels",
   achievements: [
@@ -55,7 +60,7 @@ const shipandco = {
   ],
 };
 
-const ats = {
+const ats: JobDescriptionType = {
   description: "Bluum Hire: Applicant tracking system",
   achievements: [
     "Implemented UI features and major releases with ReScript, Tailwind CSS and Next.js",
@@ -66,7 +71,7 @@ const ats = {
   ],
 };
 
-const jobs = [
+const jobs: JobItemType[] = [
   {
     company: "Scoville",
     yearStart: "May 2021",
@@ -110,7 +115,7 @@ const jobs = [
   },
 ];
 
-const other = [
+const other: string[] = [
   "I spend my free time gaining knowledge of Machine Learning, Rust and Swift",
   "Alumnus of Board of European Students of Technology",
 ];
@@ -155,13 +160,13 @@ const IndexPage = (props) => {
       <SimpleSection content={technicalSkills} />
       <SectionSubtitle subtitleText="Abilities" />
       <SimpleSection content={skills} />
-      <SectionSubtitle subtitleText="Education" />
-      <EducationSection education={education} />
       <div className={pageBreakClass + " top"} />
       <SectionSubtitle subtitleText="Employment history" />
       <EmploymentSection jobs={jobs} />
       <div className={pageBreakClass + " bottom"} />
       {isSafari && <div className={pageBreakClass + " top"} />}
+      <SectionSubtitle subtitleText="Education" />
+      <EducationSection education={education} />
       <SectionSubtitle subtitleText="Other activities and interests" />
       <SimpleSection content={other} />
       {isSafari && <div className={pageBreakClass + " bottom"} />}

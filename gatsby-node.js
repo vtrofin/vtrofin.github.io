@@ -14,7 +14,7 @@ exports.onCreateWebpackConfig = ({ actions }) => {
         "@components": path.resolve(__dirname, "src/components"),
         "@pages": path.resolve(__dirname, "src/pages"),
         "@styles": path.resolve(__dirname, "src/styles"),
-        "@types": path.resolve(__dirname, "src/types"),
+        "@typesdefs": path.resolve(__dirname, "src/typedefs"),
       },
       extensions: [".ts", ".tsx", ".js", ".jsx"],
     },

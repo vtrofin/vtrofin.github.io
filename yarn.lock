@@ -3187,6 +3187,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/react-transition-group@npm:^4.4.10":
+  version: 4.4.10
+  resolution: "@types/react-transition-group@npm:4.4.10"
+  dependencies:
+    "@types/react": "npm:*"
+  checksum: 10c0/3eb9bca143abc21eb781aa5cb1bded0c9335689d515bf0513fb8e63217b7a8122c6a323ecd5644a06938727e1f467ee061d8df1c93b68825a80ff1b47ab777a2
+  languageName: node
+  linkType: hard
+
 "@types/react@npm:*, @types/react@npm:^18.3.2":
   version: 18.3.2
   resolution: "@types/react@npm:18.3.2"
@@ -13649,6 +13658,7 @@ __metadata:
     "@types/node": "npm:^20.12.12"
     "@types/react": "npm:^18.3.2"
     "@types/react-dom": "npm:^18.3.0"
+    "@types/react-transition-group": "npm:^4.4.10"
     date-fns: "npm:^3.3.1"
     gatsby: "npm:^5.13.3"
     gatsby-cli: "npm:^5.13.2"
