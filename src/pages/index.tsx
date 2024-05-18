@@ -3,7 +3,6 @@ import { graphql } from "gatsby";
 import Layout from "@components/Layout";
 import GeneralDetails from "@components/GeneralDetails";
 import About from "@components/About";
-import SectionSubtitle from "@components/SectionSubtitle";
 import SimpleSection from "@components/SimpleSection";
 import EducationSection from "@components/EducationSection";
 import EmploymentSection from "@components/EmploymentSection";
@@ -158,19 +157,25 @@ const IndexPage: React.FunctionComponent<PageProps<DataProps>> = (props) => {
         }}
       />
       <About />
-      <SectionSubtitle subtitleText="Technical Skills" />
-      <SimpleSection content={technicalSkills} />
-      <SectionSubtitle subtitleText="Abilities" />
-      <SimpleSection content={skills} />
+
+      <SimpleSection
+        content={technicalSkills}
+        subtitleText="Technical Skills"
+      />
+
+      <SimpleSection content={skills} subtitleText="Abilities" />
       <div className={pageBreakClass + " top"} />
-      <SectionSubtitle subtitleText="Employment history" />
-      <EmploymentSection jobs={jobs} />
+
+      <EmploymentSection jobs={jobs} subtitleText="Employment history" />
       <div className={pageBreakClass + " bottom"} />
       {isSafari && <div className={pageBreakClass + " top"} />}
-      <SectionSubtitle subtitleText="Education" />
-      <EducationSection education={education} />
-      <SectionSubtitle subtitleText="Other activities and interests" />
-      <SimpleSection content={other} />
+
+      <EducationSection education={education} subtitleText="Education" />
+
+      <SimpleSection
+        content={other}
+        subtitleText="Other activities and interests"
+      />
       {isSafari && <div className={pageBreakClass + " bottom"} />}
     </Layout>
   );
