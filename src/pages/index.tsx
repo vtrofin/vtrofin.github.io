@@ -11,7 +11,9 @@ import {
   EducationItemType,
   JobDescriptionType,
   JobItemType,
+  DataProps,
 } from "@typedefs/propTypes";
+import type { PageProps } from "gatsby";
 
 const personalDetails = {
   name: "Victor Trofin",
@@ -120,7 +122,7 @@ const other: string[] = [
   "Alumnus of Board of European Students of Technology",
 ];
 
-const IndexPage = (props) => {
+const IndexPage: React.FunctionComponent<PageProps<DataProps>> = (props) => {
   const [pageBreakClass, setPageBreakClass] = useState("page-break");
   const [isBot, setIsBot] = useState(false);
   const [isSafari, setIsSafari] = useState(false);

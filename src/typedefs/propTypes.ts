@@ -24,9 +24,19 @@ interface JobItemType {
   jobDescription: JobDescriptionType[];
 }
 
+type DataProps = {
+  site: {
+    siteMetadata: {
+      phone: string;
+      email: string;
+    };
+  };
+};
+
 export type {
   EducationItemType,
   PersonalDetailsType,
   JobDescriptionType,
   JobItemType,
+  DataProps,
 };
