@@ -19,21 +19,21 @@ const personalDetails = {
   location: "Kyoto, Japan",
 };
 
-const technicalSkills: string[] = [
-  "Proficient in TypeScript, Node.js, ReScript; Swift (personal project); Rust, Python, Go (basic)",
-  "Skilled in front-end development using React, Next.js, CSS, Tailwind; Vue.js, Gatsby,  SwiftUI (personal project)",
-  "Experienced in back-end development using Fastify, Express, MongoDB, PostgreSQL, Prisma ORM, Redis PubSub, WebSocket",
-  "Knowledgeable about XML, REST and GraphQL APIs",
-  "Experienced with DevOps tools such as GitHub Actions, CircleCI, Docker, Terraform, AWS",
-  "Competent in testing using Mocha, Jest, UVU",
-];
-
 const skills: string[] = [
-  "Analytical thinker capable of identifying solutions aligned with business needs",
-  "Strong sense of responsibility and very good adaptability",
+  "Highly responsible and adaptable - Led the front-end implementation for an AI-powered call center",
+  "Proactive problem solver with strong analytical skills - Implemented a custom call center UI that tripled call center efficiency, aligning solutions with business needs.",
   "Good communication and presentation skills",
   "Good time management skills",
-  "Languages spoken: Romanian – mother tongue, fluent in English, basic Japanese",
+  "Languages spoken: native Romanian, fluent in English, basic Japanese",
+];
+
+const technicalSkills: string[] = [
+  "Proficient in TypeScript and ReScript",
+  "Advanced front-end development skills with React, Next.js, CSS, Tailwind and Vue.js",
+  "Comprehensive back-end development experience with Node.js, Fastify, MongoDB, PostgreSQL, Prisma, Redis",
+  "Proficient in designing and consuming XML, REST, and GraphQL APIs",
+  "Experienced with DevOps tools such as GitHub Actions, CircleCI, Docker, Terraform, AWS",
+  "Competent in testing using Mocha, Jest, UVU and performance monitoring with Sentry",
 ];
 
 const education: EducationItemType[] = [
@@ -41,34 +41,42 @@ const education: EducationItemType[] = [
     yearStart: "2009",
     yearEnd: "2013",
     school:
-      "Bucharest University of Economic Studies – Master in International Business",
+      "Bucharest University of Economic Studies - Master in International Business",
   },
   {
     yearStart: "2003",
     yearEnd: "2008",
     school:
-      "Politehnica University of Bucharest – Faculty of Power Engineering",
+      "Politehnica University of Bucharest - Faculty of Power Engineering",
   },
 ];
 
-const shipandco: JobDescriptionType = {
-  description:
-    "Ship&co: Web app to compare shipping rates and create shipping labels",
+const calliope: JobDescriptionType = {
+  description: "Calliope: AI powered call center",
   achievements: [
-    "Implemented major releases with partner APIs: Shopify, QuickBook Commerce, DHL, Yamato",
-    "Developed features with Meteor and Handlebars. Key contributions: led effort to built the UI for a new pricing strategy, schedule parcel pick-ups, ensured GDPR compliance",
-    "Implemented full-stack features on internal apps using React, Meteor and Express.js. Key contributions: set-up a REST API for inventory synchronization, user validation and logging",
+    "Led implementation of the front-end with React, Amazon Connect and Tailwind CSS",
+    "Key contribution: set-up the project and tooling with Typescript and Vite JS, implemented a custom call center UI with Amazon Connect Streams API",
   ],
 };
 
 const ats: JobDescriptionType = {
   description: "Bluum Hire: Applicant tracking system",
   achievements: [
-    "Implemented UI features and major releases with ReScript, Tailwind CSS and Next.js",
-    "Implemented GraphQL API features with TypeScript, Prisma and Fastify",
-    "Key contributions: send and receive emails with SendGrid, schedule events for job applicants, export candidate data to CSV",
+    "Implemented UI features and major releases with ReScript, Next.js and Tailwind CSS",
+    "Implemented GraphQL API features with TypeScript, Fastify, Prisma and PostgreSQL",
+    "Key contributions: events for job applications, managed emails with SendGrid, CSV data exports",
     "Refactored and set-up new CI/CD pipelines with Github Actions and Docker",
     "Contributed to the provisioning of the production environment with AWS and Terraform",
+  ],
+};
+
+const shipandco: JobDescriptionType = {
+  description:
+    "Ship&co: Web app to compare shipping rates and create shipping labels",
+  achievements: [
+    "Implemented major releases with partner APIs: Shopify, DHL, Yamato",
+    "Implemented full-stack features with Meteor, React and Express.js",
+    "Key contributions: led effort to built the UI for a new pricing strategy, schedule parcel pick-ups, ensured GDPR compliance, set-up a REST API for inventory synchronization",
   ],
 };
 
@@ -77,7 +85,7 @@ const jobs: JobItemType[] = [
     company: "Scoville",
     yearStart: "May 2021",
     jobTitle: "Full-stack web engineer, Kyoto",
-    jobDescription: [ats],
+    jobDescription: [calliope, ats],
   },
   {
     company: "BertrandCo",
@@ -117,7 +125,7 @@ const jobs: JobItemType[] = [
 ];
 
 const other: string[] = [
-  "I spend my free time gaining knowledge of Machine Learning, Rust and Swift",
+  "I have acquired foundational knowledge in Rust and Swift, enabling me to contribute to projects and improve on the job.",
   "Alumnus of Board of European Students of Technology",
 ];
 
@@ -158,19 +166,19 @@ const IndexPage: React.FunctionComponent<PageProps<DataProps>> = (props) => {
       />
       <About />
 
+      <SimpleSection content={skills} subtitleText="Abilities" />
+
       <SimpleSection
         content={technicalSkills}
         subtitleText="Technical Skills"
       />
 
-      <SimpleSection content={skills} subtitleText="Abilities" />
+      <EducationSection education={education} subtitleText="Education" />
       <div className={pageBreakClass + " top"} />
 
       <EmploymentSection jobs={jobs} subtitleText="Employment history" />
       <div className={pageBreakClass + " bottom"} />
-      {isSafari && <div className={pageBreakClass + " top"} />}
-
-      <EducationSection education={education} subtitleText="Education" />
+      {/* {isSafari && <div className={pageBreakClass + " top"} />} */}
 
       <SimpleSection
         content={other}

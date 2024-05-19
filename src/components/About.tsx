@@ -15,9 +15,9 @@ const About: React.FunctionComponent<Props> = ({ size }) => {
   return (
     <div className={className}>
       <p>
-        Experienced full-stack web engineer with over {duration} of expertise.
-        Proficient in the JavaScript ecosystem, I leverage diverse tech stacks
-        to innovate user experiences.
+        Versatile full-stack web engineer with over {duration} of expertise.
+        Skilled in cross-functional collaboration, I leverage diverse tech
+        stacks to innovate user experiences and drive business growth.
       </p>
     </div>
   );
