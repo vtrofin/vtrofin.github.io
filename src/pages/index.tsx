@@ -20,9 +20,9 @@ const personalDetails = {
 };
 
 const skills: string[] = [
-  "Highly responsible and adaptable - Led the front-end implementation for an AI-powered call center",
-  "Proactive problem solver with strong analytical skills - Implemented a custom call center UI that tripled call center efficiency, aligning solutions with business needs.",
-  "Good communication and presentation skills",
+  "Highly responsible and adaptable - Led the UI implementation for an AI powered call center",
+  "Proactive problem solver with strong analytical skills - Implemented a custom call center UI that tripled call center efficiency, aligning solutions with project goals",
+  "Good communication and presentation skills - demonstrated in a collaborative, interdisciplinary AI team environment ",
   "Good time management skills",
   "Languages spoken: native Romanian, fluent in English, basic Japanese",
 ];
@@ -55,18 +55,18 @@ const calliope: JobDescriptionType = {
   description: "Calliope: AI powered call center",
   achievements: [
     "Led implementation of the front-end with React, Amazon Connect and Tailwind CSS",
-    "Key contribution: set-up the project and tooling with Typescript and Vite JS, implemented a custom call center UI with Amazon Connect Streams API",
+    "Set up project tooling and implemented a custom UI, significantly improving efficiency",
+    "Recruited and onboarded top-tier front-end developers, ensuring project excellence",
   ],
 };
 
 const ats: JobDescriptionType = {
   description: "Bluum Hire: Applicant tracking system",
   achievements: [
-    "Implemented UI features and major releases with ReScript, Next.js and Tailwind CSS",
-    "Implemented GraphQL API features with TypeScript, Fastify, Prisma and PostgreSQL",
-    "Key contributions: events for job applications, managed emails with SendGrid, CSV data exports",
-    "Refactored and set-up new CI/CD pipelines with Github Actions and Docker",
-    "Contributed to the provisioning of the production environment with AWS and Terraform",
+    "Developed UI features and GraphQL API with ReScript, Next.js, Fastify, and PostgreSQL",
+    "Managed emails with SendGrid, facilitated seamless CSV data exports, ensured GDPR compliance",
+    "Ensured deployment efficiency by refactoring CI/CD pipelines with Github Actions and Docker",
+    "Contributed to AWS and Terraform provisioning",
   ],
 };
 
@@ -74,9 +74,9 @@ const shipandco: JobDescriptionType = {
   description:
     "Ship&co: Web app to compare shipping rates and create shipping labels",
   achievements: [
-    "Implemented major releases with partner APIs: Shopify, DHL, Yamato",
-    "Implemented full-stack features with Meteor, React and Express.js",
-    "Key contributions: led effort to built the UI for a new pricing strategy, schedule parcel pick-ups, ensured GDPR compliance, set-up a REST API for inventory synchronization",
+    "Executed major releases with partner APIs: Shopify, DHL and Yamato",
+    "Implemented comprehensive full-stack features with Meteor, React and Express.js",
+    "Led UI development for new pricing strategy, delivered impactful feature to schedule parcel pick-ups and ensured GDPR compliance",
   ],
 };
 
@@ -125,7 +125,7 @@ const jobs: JobItemType[] = [
 ];
 
 const other: string[] = [
-  "I have acquired foundational knowledge in Rust and Swift, enabling me to contribute to projects and improve on the job.",
+  "Foundational knowledge in Rust and Swift, enabling me to contribute and improve on the job",
   "Alumnus of Board of European Students of Technology",
 ];
 
@@ -173,18 +173,18 @@ const IndexPage: React.FunctionComponent<PageProps<DataProps>> = (props) => {
         subtitleText="Technical Skills"
       />
 
-      <EducationSection education={education} subtitleText="Education" />
-      <div className={pageBreakClass + " top"} />
-
       <EmploymentSection jobs={jobs} subtitleText="Employment history" />
-      <div className={pageBreakClass + " bottom"} />
+      {/* <div className={pageBreakClass + " bottom"} /> */}
       {/* {isSafari && <div className={pageBreakClass + " top"} />} */}
+
+      <EducationSection education={education} subtitleText="Education" />
+      {/* <div className={pageBreakClass + " top"} /> */}
 
       <SimpleSection
         content={other}
         subtitleText="Other activities and interests"
       />
-      {isSafari && <div className={pageBreakClass + " bottom"} />}
+      {/* {isSafari && <div className={pageBreakClass + " bottom"} />} */}
     </Layout>
   );
 };
