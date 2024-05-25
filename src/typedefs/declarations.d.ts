@@ -1,3 +1,5 @@
+// Fixes type errors for image imports
+
 declare module "*.svg" {
   const content: any;
   export default content;
