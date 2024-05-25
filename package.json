@@ -9,7 +9,6 @@
     "gatsby": "gatsby",
     "build": "tsc && gatsby build",
     "develop": "gatsby develop -H 0.0.0.0",
-    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\"",
     "ts:check": "tsc --noEmit"
   },
   "keywords": [
