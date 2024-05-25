@@ -132,7 +132,7 @@ const other: string[] = [
 const IndexPage: React.FunctionComponent<PageProps<DataProps>> = (props) => {
   const [pageBreakClass, setPageBreakClass] = useState("page-break");
   const [isBot, setIsBot] = useState(false);
-  const [isSafari, setIsSafari] = useState(false);
+  const [_isSafari, setIsSafari] = useState(false); // used to generate page breaks for print medium
 
   useEffect(() => {
     const agent = window.navigator.userAgent;
