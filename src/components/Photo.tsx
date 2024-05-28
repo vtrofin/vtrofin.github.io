@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
 
-const Photo = props => (
+const Photo: React.FunctionComponent<{ src: string }> = ({ src }) => (
   <div className="profilePic">
     <img
       title="profile picture"
       alt="Victor Trofin full stack web engineer in Kyoto, Japan"
-      src={props.src}
+      src={src}
       loading="lazy"
     />
   </div>

@@ -883,7 +883,7 @@ ul.achievements {
   ul li,
   .footer-text {
     font-size: 0.8rem;
-    margin-bottom: 0.1rem;
+    margin-bottom: 0;
   }
   .sectionSubtitle {
     margin-top: 16px;
@@ -906,7 +906,7 @@ ul.achievements {
     margin-bottom: 0;
   }
   .liJobItem:not(:first-child) {
-    margin-top: 1.5rem;
+    margin-top: 1.25rem;
   }
   .footer-text {
     margin-top: 1rem;

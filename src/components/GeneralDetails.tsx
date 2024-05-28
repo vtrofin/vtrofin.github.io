@@ -5,12 +5,13 @@ import Photo from "./Photo";
 import profilePic from "../images/victor_light_yellow.jpg";
 import githubIco from "../images/ico-github.svg";
 import envelope from "../images/envelope.svg";
+import { PersonalDetailsType } from "@typedefs/propTypes";
 
 const getAge = () => {
   const birthdate = new Date("1984-09-05T06:00:00+0200");
   const today = new Date();
   const age = differenceInYears(today, birthdate);
-  if (isNaN(age)) {
+  if (Number.isNaN(age)) {
     // date fns seems to fail in safari
     const month = today.getMonth() + 1;
     const day = today.getDay();
@@ -20,8 +21,10 @@ const getAge = () => {
   return age;
 };
 
-const GeneralDetails = (props) => {
-  const { name, location, email, phone } = props.personalDetails;
+const GeneralDetails: React.FunctionComponent<{
+  personalDetails: PersonalDetailsType;
+}> = ({ personalDetails }) => {
+  const { name, location, email, phone } = personalDetails;
   return (
     <div className="generalDetails">
       <div className="generalText">

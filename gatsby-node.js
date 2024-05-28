@@ -4,34 +4,20 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
- // You can delete this file if you're not using it
-// exports.modifyWebpackConfig = ({ config, stage }) => {
-//   switch (stage) {
-//     case "develop":
-//       config.merge({
-//         devServer: {
-//             host: "0.0.0.0",
-//             disableHostCheck: true,
-//         }
-//     });
+const path = require("path");
 
-//       break;
-
-//     case "build-css":
-
-//       break;
-
-//     case "build-html":
-
-
-//       break;
-
-//     case "build-javascript":
-
-
-//       break;
-//   }
-
-//   return config;
-// };
-
+// Set up path aliases
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      alias: {
+        "@": path.resolve(__dirname, "src"),
+        "@components": path.resolve(__dirname, "src/components"),
+        "@pages": path.resolve(__dirname, "src/pages"),
+        "@styles": path.resolve(__dirname, "src/styles"),
+        "@typesdefs": path.resolve(__dirname, "src/typedefs"),
+      },
+      extensions: [".ts", ".tsx", ".js", ".jsx"],
+    },
+  });
+};
