@@ -33,7 +33,7 @@ const technicalSkills: string[] = [
   "Comprehensive back-end development experience with Node.js, Fastify, MongoDB, PostgreSQL, Prisma, Redis",
   "Proficient in designing and consuming XML, REST, and GraphQL APIs",
   "Experienced with DevOps tools such as GitHub Actions, CircleCI, Docker, Terraform, AWS",
-  "Competent in testing using Mocha, Jest, UVU and performance monitoring with Sentry",
+  "Competent in testing using Mocha, Jest, Vitest and performance monitoring with Sentry",
 ];
 
 const education: EducationItemType[] = [
@@ -64,7 +64,7 @@ const ats: JobDescriptionType = {
   description: "Bluum Hire: Applicant tracking system",
   achievements: [
     "Developed UI features and GraphQL API with ReScript, Next.js, Fastify, and PostgreSQL",
-    "Managed emails with SendGrid, facilitated seamless CSV data exports, ensured GDPR compliance",
+    "Managed emails with SendGrid, facilitated seamless CSV data exports",
     "Ensured deployment efficiency by refactoring CI/CD pipelines with Github Actions and Docker",
     "Contributed to AWS and Terraform provisioning",
   ],
