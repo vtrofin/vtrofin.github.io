@@ -20,10 +20,10 @@ const personalDetails = {
 };
 
 const skills: string[] = [
-  "Highly responsible and adaptable - Led the UI implementation for an AI powered call center",
-  "Proactive problem solver with strong analytical skills - Implemented a custom call center UI that tripled call center efficiency, aligning solutions with project goals",
-  "Good communication and presentation skills - demonstrated in a collaborative, interdisciplinary AI team environment ",
-  "Good time management skills",
+  "Highly adaptable — progressed from leading the front-end to full technical ownership across front-end, back-end and infrastructure",
+  "Proactive problem solver — implemented a custom call center UI that tripled agent efficiency; consistently investigates root causes rather than patching symptoms",
+  "Strong communicator — thorough documentation and cross-functional collaboration in interdisciplinary AI team environments",
+  "Security-conscious — proactively implemented supply chain attack mitigation, GDPR-compliant data erasure and input validation across multiple projects",
   "Languages spoken: native Romanian, fluent in English, basic Japanese",
 ];
 
@@ -55,11 +55,11 @@ const scoville: JobDescriptionType = {
   description:
     "Three projects: an AI-powered call center, a video interview platform and an applicant tracking system",
   achievements: [
-    "Led front-end implementation of an AI-powered call center SPA with React, Amazon Connect Streams API and Tailwind CSS; currently tech lead with full ownership of front-end, back-end and infrastructure decisions",
-    "Delivered core call center features: missed inbound call tracking, call scheduling, campaign management, agent state machine and DocumentDB read replica for performance improvements",
-    "Built full-stack features for an AI video interview platform (React Router v7, SSR on Lambda via SST): bulk candidate invitation system with async email queuing via SQS, Slack notifications via EventBridge, post-interview feedback management and company-side candidate portal",
-    "Developed full-stack features for an applicant tracking system: built the front-end in ReScript with React Hook Form, implemented applications and job position management with GraphQL, and built the email pipeline with inbound parsing and S3 attachment storage",
-    "Managed infrastructure across 10+ microservices: Terraform, CDK, GitHub Actions and key AWS services including Lambda, Fargate, EventBridge, SQS, S3, SES, Amazon Connect and DocumentDB",
+    "Led the front-end of an AI-powered call center SPA, significantly improving agent efficiency; now tech lead with full ownership across front-end, back-end and infrastructure",
+    "Enabled agents to track missed inbound calls, schedule callbacks and manage campaigns; improved read performance with a DocumentDB read replica",
+    "Enabled recruiters to bulk-invite candidates, track invitation status and review post-interview feedback through a company-side portal; platform deployed serverless via SST on Lambda",
+    "Enabled recruiters to manage job applications and positions through a GraphQL-powered interface; built the candidate email pipeline supporting inbound parsing and document uploads to S3",
+    "Standardised and automated deployments across 10+ microservices using Terraform, CDK and GitHub Actions on AWS",
   ],
 };
 
@@ -67,9 +67,9 @@ const shipandco: JobDescriptionType = {
   description:
     "Ship&co: Web app to compare shipping rates and create shipping labels",
   achievements: [
-    "Integrated e-commerce and logistics partner APIs: Shopify, DHL and Yamato",
-    "Built full-stack features with Meteor, React, Express.js and MongoDB: parcel pick-up scheduling via DHL API and GDPR-compliant personal data erasure",
-    "Delivered a new pricing strategy with Stripe",
+    "Enabled merchants to compare shipping rates and create labels through integrations with Shopify, DHL and Yamato",
+    "Allowed merchants to schedule parcel pick-ups from the platform; implemented GDPR-compliant personal data erasure",
+    "Launched a new subscription pricing model with Stripe",
   ],
 };
 
