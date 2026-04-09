@@ -28,12 +28,12 @@ const skills: string[] = [
 ];
 
 const technicalSkills: string[] = [
-  "Proficient in TypeScript and ReScript",
-  "Advanced front-end development skills with React, Next.js, CSS, Tailwind and Vue.js",
-  "Comprehensive back-end development experience with Node.js, Fastify, MongoDB, PostgreSQL, Prisma, Redis",
-  "Proficient in designing and consuming XML, REST, and GraphQL APIs",
-  "Experienced with DevOps tools such as GitHub Actions, CircleCI, Docker, Terraform, AWS",
-  "Competent in testing using Mocha, Jest, Vitest and performance monitoring with Sentry",
+  "Languages: TypeScript, ReScript, Python",
+  "Front-end: React, React Router v7, Next.js, Vue.js, Tailwind CSS, shadcn/radix UI, Storybook",
+  "Back-end & APIs: Node.js, Fastify, PostgreSQL, Prisma, Drizzle ORM, Redis, MongoDB, REST, GraphQL",
+  "AWS: Proficient with AWS cloud services — Lambda, Fargate, EventBridge, SQS, S3, SES, Amazon Connect, DocumentDB",
+  "Infrastructure & DevOps: Terraform, CDK, Docker, GitHub Actions",
+  "Testing & Monitoring: Jest, Vitest, Sentry",
 ];
 
 const education: EducationItemType[] = [
@@ -51,22 +51,15 @@ const education: EducationItemType[] = [
   },
 ];
 
-const calliope: JobDescriptionType = {
-  description: "Calliope: AI powered call center",
+const scoville: JobDescriptionType = {
+  description:
+    "Three projects: an AI-powered call center, a video interview platform and an applicant tracking system",
   achievements: [
-    "Led implementation of the front-end with React, Amazon Connect and Tailwind CSS",
-    "Set up project tooling and implemented a custom UI, significantly improving efficiency",
-    "Recruited and onboarded top-tier front-end developers, ensuring project excellence",
-  ],
-};
-
-const ats: JobDescriptionType = {
-  description: "Bluum Hire: Applicant tracking system",
-  achievements: [
-    "Developed UI features and GraphQL API with ReScript, Next.js, Fastify, and PostgreSQL",
-    "Managed emails with SendGrid, facilitated seamless CSV data exports",
-    "Ensured deployment efficiency by refactoring CI/CD pipelines with Github Actions and Docker",
-    "Contributed to AWS and Terraform provisioning",
+    "Led front-end implementation of an AI-powered call center SPA with React, Amazon Connect Streams API and Tailwind CSS; currently tech lead with full ownership of front-end, back-end and infrastructure decisions",
+    "Delivered core call center features: missed inbound call tracking, call scheduling, campaign management, agent state machine and DocumentDB read replica for performance improvements",
+    "Built full-stack features for an AI video interview platform (React Router v7, SSR on Lambda via SST): bulk candidate invitation system with async email queuing via SQS, Slack notifications via EventBridge, post-interview feedback management and company-side candidate portal",
+    "Developed full-stack features for an applicant tracking system: built the front-end in ReScript with React Hook Form, implemented applications and job position management with GraphQL, and built the email pipeline with inbound parsing and S3 attachment storage",
+    "Managed infrastructure across 10+ microservices: Terraform, CDK, GitHub Actions and key AWS services including Lambda, Fargate, EventBridge, SQS, S3, SES, Amazon Connect and DocumentDB",
   ],
 };
 
@@ -85,7 +78,7 @@ const jobs: JobItemType[] = [
     company: "Scoville",
     yearStart: "May 2021",
     jobTitle: "Full-stack web engineer, Kyoto",
-    jobDescription: [calliope, ats],
+    jobDescription: [scoville],
   },
   {
     company: "BertrandCo",
