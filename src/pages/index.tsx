@@ -67,9 +67,9 @@ const shipandco: JobDescriptionType = {
   description:
     "Ship&co: Web app to compare shipping rates and create shipping labels",
   achievements: [
-    "Executed major releases with partner APIs: Shopify, DHL and Yamato",
-    "Implemented comprehensive full-stack features with Meteor, React and Express.js",
-    "Led UI development for new pricing strategy, delivered impactful feature to schedule parcel pick-ups and ensured GDPR compliance",
+    "Integrated e-commerce and logistics partner APIs: Shopify, DHL and Yamato",
+    "Built full-stack features with Meteor, React, Express.js and MongoDB: parcel pick-up scheduling via DHL API and GDPR-compliant personal data erasure",
+    "Delivered a new pricing strategy with Stripe",
   ],
 };
 
