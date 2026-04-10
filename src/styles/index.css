@@ -821,6 +821,10 @@ ul.achievements {
   }
 }
 
+@page {
+  margin: 1cm;
+}
+
 @media print {
   /* basic print support for A4 paper */
   .layout {
@@ -882,7 +886,7 @@ ul.achievements {
   .about-container p,
   ul li,
   .footer-text {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     margin-bottom: 0;
   }
   .sectionSubtitle {

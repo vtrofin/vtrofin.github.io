@@ -20,19 +20,19 @@ const personalDetails = {
 };
 
 const skills: string[] = [
-  "Highly adaptable — progressed from leading the front-end to full technical ownership across front-end, back-end and infrastructure",
-  "Proactive problem solver — implemented a custom call center UI that tripled agent efficiency; consistently investigates root causes rather than patching symptoms",
-  "Strong communicator — thorough documentation and cross-functional collaboration in interdisciplinary AI team environments",
-  "Security-conscious — proactively implemented supply chain attack mitigation, GDPR-compliant data erasure and input validation across multiple projects",
+  "Highly adaptable — grew from front-end lead to full technical ownership across the stack",
+  "Proactive problem solver — call center UI tripled agent efficiency; tackles root causes over quick fixes",
+  "Strong communicator — clear documentation and cross-functional collaboration across AI teams",
+  "Security-conscious — supply chain mitigation, GDPR data erasure and input validation",
   "Languages spoken: native Romanian, fluent in English, basic Japanese",
 ];
 
 const technicalSkills: string[] = [
-  "Languages: TypeScript, ReScript, Python",
+  "Languages: TypeScript, ReScript",
   "Front-end: React, React Router v7, Next.js, Vue.js, Tailwind CSS, shadcn/radix UI, Storybook",
-  "Back-end & APIs: Node.js, Fastify, PostgreSQL, Prisma, Drizzle ORM, Redis, MongoDB, REST, GraphQL",
-  "AWS: Proficient with AWS cloud services — Lambda, Fargate, EventBridge, SQS, S3, SES, Amazon Connect, DocumentDB",
-  "Infrastructure & DevOps: Terraform, CDK, Docker, GitHub Actions",
+  "Back-end & APIs: Node.js, PostgreSQL, Drizzle ORM, Redis, MongoDB, REST, GraphQL" /*Fastify, Prisma */,
+  "AWS: Lambda, Fargate, EventBridge, SQS, S3, SES, Amazon Connect, DocumentDB",
+  "Infrastructure & DevOps: Terraform, CDK, SST, Docker, GitHub Actions",
   "Testing & Monitoring: Jest, Vitest, Sentry",
 ];
 
@@ -59,16 +59,15 @@ const scoville: JobDescriptionType = {
     "Enabled agents to track missed inbound calls, schedule callbacks and manage campaigns; improved read performance with a DocumentDB read replica",
     "Enabled recruiters to bulk-invite candidates, track invitation status and review post-interview feedback through a company-side portal; platform deployed serverless via SST on Lambda",
     "Enabled recruiters to manage job applications and positions through a GraphQL-powered interface; built the candidate email pipeline supporting inbound parsing and document uploads to S3",
-    "Standardised and automated deployments across 10+ microservices using Terraform, CDK and GitHub Actions on AWS",
+    "Automated deployments across 10+ microservices via Terraform, CDK and GitHub Actions on AWS",
   ],
 };
 
 const shipandco: JobDescriptionType = {
-  description:
-    "Ship&co: Web app to compare shipping rates and create shipping labels",
+  description: "Web app to compare shipping rates and create shipping labels",
   achievements: [
-    "Enabled merchants to compare shipping rates and create labels through integrations with Shopify, DHL and Yamato",
-    "Allowed merchants to schedule parcel pick-ups from the platform; implemented GDPR-compliant personal data erasure",
+    "Enabled merchants to compare rates and create labels via Shopify, DHL and Yamato integrations",
+    "Allowed merchants to schedule parcel pick-ups and request GDPR-compliant personal data erasure",
     "Launched a new subscription pricing model with Stripe",
   ],
 };
@@ -81,7 +80,7 @@ const jobs: JobItemType[] = [
     jobDescription: [scoville],
   },
   {
-    company: "BertrandCo",
+    company: "Ship&co",
     yearStart: "Feb 2018",
     yearEnd: "Apr 2021",
     // city: 'Kyoto',
@@ -118,7 +117,7 @@ const jobs: JobItemType[] = [
 ];
 
 const other: string[] = [
-  "Foundational knowledge in Rust and Swift, enabling me to contribute and improve on the job",
+  "Python, Rust and Swift — foundational knowledge, able to contribute and ramp up quickly",
   "Alumnus of Board of European Students of Technology",
 ];
 
