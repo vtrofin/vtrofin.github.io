@@ -157,7 +157,10 @@ const jobs: JobItemType[] = [
 ];
 
 const IndexPage: React.FunctionComponent<PageProps<DataProps>> = (props) => {
-  const isWestern = new URLSearchParams(props.location.search).get("western") === "true";
+  const isWestern = React.useMemo(
+    () => new URLSearchParams(props.location.search).get("western") === "true",
+    [props.location.search],
+  );
   const [pageBreakClass, setPageBreakClass] = useState("page-break");
   const [isBot, setIsBot] = useState(false);
   const [_isSafari, setIsSafari] = useState(false); // used to generate page breaks for print medium
@@ -187,7 +190,12 @@ const IndexPage: React.FunctionComponent<PageProps<DataProps>> = (props) => {
     <Layout>
       <p className="pdf-hint">
         Viewing Victor&apos;s CV —{" "}
-        <a href={isWestern ? "/cv-western.pdf" : "/cv.pdf"} download={isWestern ? "Victor_Trofin_CV_Western.pdf" : "Victor_Trofin_CV.pdf"}>
+        <a
+          href={isWestern ? "/cv-western.pdf" : "/cv.pdf"}
+          download={
+            isWestern ? "Victor_Trofin_CV_Western.pdf" : "Victor_Trofin_CV.pdf"
+          }
+        >
           download as PDF
         </a>
       </p>
