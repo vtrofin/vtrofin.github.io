@@ -872,11 +872,11 @@ ul.achievements {
     display: none;
   }
 }
-@media all {
-  .page-break {
-    display: none;
-  }
+
+.page-break {
+  display: none;
 }
+
 
 @page {
   margin: 1cm;
