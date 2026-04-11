@@ -889,17 +889,35 @@ ul.achievements {
     padding-top: 0;
     margin-top: 0;
   }
-  .page-break.chrome,
-  .page-break.firefox,
-  .page-break.safari
-   {
-    display: block;
-    break-before: page;
+  @supports (-moz-appearance: none) {
+    /* Firefox */
+    .page-break {
+      display: block;
+      break-before: page;
+    }
+    .page-break.bottom {
+      break-after: avoid;
+    }
   }
-  .page-break.chrome.bottom,
-  .page-break.firefox.bottom,
-  .page-break.safari.bottom {
-    break-before: avoid;
+  @supports (-webkit-touch-callout: none) {
+    /* Safari */
+    .page-break {
+      display: block;
+      break-before: page;
+    }
+    .page-break.bottom {
+      break-after: avoid;
+    }
+  }
+  @supports (not (-moz-appearance: none)) and (not (-webkit-touch-callout: none)) and (-webkit-appearance: none) {
+    /* Chrome / Chromium */
+    .page-break {
+      display: block;
+      break-before: page;
+    }
+    .page-break.bottom {
+      break-after: avoid;
+    }
   }
 
   .generalDetails {
