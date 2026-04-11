@@ -31,7 +31,7 @@ const jsonLd = {
 };
 
 const Layout = ({ children }: React.PropsWithChildren) => (
-  <div>
+  <>
     <Helmet
       title="Victor Trofin — Senior Full-Stack Engineer, Kyoto"
       meta={[
@@ -54,7 +54,7 @@ const Layout = ({ children }: React.PropsWithChildren) => (
       ]}
     />
     <main className="layout">{children}</main>
-  </div>
+  </>
 );
 
 export default Layout;
