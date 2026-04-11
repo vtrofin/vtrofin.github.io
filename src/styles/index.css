@@ -712,7 +712,8 @@ img#git-icon {
 }
 img#envelope-icon {
   margin-bottom: 0;
-  width: 78%;
+  width: 24px;
+  height: 24px;
 }
 .profilePic {
   text-align: center;
@@ -893,12 +894,12 @@ ul.achievements {
   .page-break.safari
    {
     display: block;
-    page-break-before: always;
+    break-before: page;
   }
   .page-break.chrome.bottom,
   .page-break.firefox.bottom,
   .page-break.safari.bottom {
-    page-break-before: avoid;
+    break-before: avoid;
   }
 
   .generalDetails {

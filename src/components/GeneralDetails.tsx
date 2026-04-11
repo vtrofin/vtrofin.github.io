@@ -48,7 +48,10 @@ const GeneralDetails: React.FunctionComponent<{
               loading="lazy"
             />
           </a>
-          <a href="#" aria-label="LinkedIn profile">
+          <a
+            href="https://www.linkedin.com/in/victor-t-5a880910/"
+            aria-label="LinkedIn profile"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
