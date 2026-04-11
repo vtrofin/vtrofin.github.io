@@ -970,7 +970,7 @@ ul.achievements {
   }
   .generalText p,
   .about-container p,
-  ul li,
+  .layout ul li,
   .footer-text {
     font-size: 0.75rem;
     margin-bottom: 0;
