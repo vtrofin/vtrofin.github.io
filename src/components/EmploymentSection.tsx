@@ -12,7 +12,7 @@ const EmploymentSection: React.FunctionComponent<Props> = ({
   jobs,
   subtitleText,
 }) => (
-  <div>
+  <section>
     <SectionSubtitle subtitleText={subtitleText} />
     <div className="employmentSection">
       <ul className="jobsUl">
@@ -21,7 +21,7 @@ const EmploymentSection: React.FunctionComponent<Props> = ({
         ))}
       </ul>
     </div>
-  </div>
+  </section>
 );
 
 export default EmploymentSection;

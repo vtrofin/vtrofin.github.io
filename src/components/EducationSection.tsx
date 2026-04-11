@@ -7,14 +7,14 @@ const EducationSection: React.FunctionComponent<{
   education: EducationItemType[];
   subtitleText: string;
 }> = ({ education, subtitleText }) => (
-  <div>
+  <section>
     <SectionSubtitle subtitleText={subtitleText} />
     <ul>
       {education.map((educationItem, index) => (
         <EducationItem key={index} educationItem={educationItem} />
       ))}
     </ul>
-  </div>
+  </section>
 );
 
 export default EducationSection;

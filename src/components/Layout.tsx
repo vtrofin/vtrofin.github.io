@@ -2,20 +2,58 @@ import React from "react";
 import Helmet from "react-helmet";
 import "../styles/index.css";
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Victor Trofin",
+  jobTitle: "Senior Full-Stack Engineer",
+  url: "https://vtrofin.github.io",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Kyoto",
+    addressCountry: "JP",
+  },
+  worksFor: {
+    "@type": "Organization",
+    name: "Scoville",
+  },
+  knowsAbout: [
+    "TypeScript",
+    "React",
+    "Next.js",
+    "Node.js",
+    "PostgreSQL",
+    "GraphQL",
+    "AWS",
+    "Terraform",
+    "Docker",
+  ],
+};
+
 const Layout = ({ children }: React.PropsWithChildren) => (
   <div>
     <Helmet
-      title="Victor Trofin, web engineer in Japan"
+      title="Victor Trofin — Senior Full-Stack Engineer, Kyoto"
       meta={[
         {
           name: "description",
           content:
-            "Full-stack web engineer in Kyoto, Japan. Currently at Ship&co, working with Node.js, Vue.js and React",
+            "Senior full-stack engineer and tech lead based in Kyoto, Japan. Experienced in TypeScript, React, Node.js, and AWS infrastructure.",
         },
-        { name: "keywords", content: "React, Vue.js, Node.js, CV, Kyoto" },
+        {
+          name: "keywords",
+          content:
+            "TypeScript, React, Node.js, AWS, full-stack engineer, tech lead, Kyoto, Japan",
+        },
+      ]}
+      script={[
+        {
+          type: "application/ld+json",
+          innerHTML: JSON.stringify(jsonLd),
+        },
       ]}
     />
-    <div className="layout">{children}</div>
+    <main className="layout">{children}</main>
   </div>
 );
 

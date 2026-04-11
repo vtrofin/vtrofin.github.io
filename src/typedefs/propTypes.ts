@@ -9,6 +9,12 @@ interface PersonalDetailsType {
   location: string;
   email: string;
   phone: string;
+  status?: string;
+}
+
+interface CompetencyItemType {
+  label: string;
+  description: string;
 }
 
 type JobDescriptionType =
@@ -36,6 +42,7 @@ type DataProps = {
 export type {
   EducationItemType,
   PersonalDetailsType,
+  CompetencyItemType,
   JobDescriptionType,
   JobItemType,
   DataProps,

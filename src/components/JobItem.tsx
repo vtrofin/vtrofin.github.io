@@ -34,8 +34,8 @@ const JobItem: React.FunctionComponent<{
       <div className="jobItem">
         <div className="jobItemFirstLine">
           <h3>{company}</h3>
-          <p className="employment-years">{`${yearStart} - ${
-            yearEnd ? yearEnd : ""
+          <p className="employment-years">{`${yearStart} – ${
+            yearEnd ? yearEnd : "present"
           }`}</p>
         </div>
         {city && <p style={{ fontStyle: "italic" }}>{city}</p>}

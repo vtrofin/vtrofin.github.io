@@ -3,11 +3,12 @@ import { graphql } from "gatsby";
 import Layout from "@components/Layout";
 import GeneralDetails from "@components/GeneralDetails";
 import About from "@components/About";
-import SimpleSection from "@components/SimpleSection";
+import CompetencyGrid from "@components/CompetencyGrid";
 import EducationSection from "@components/EducationSection";
 import EmploymentSection from "@components/EmploymentSection";
 import {
   EducationItemType,
+  CompetencyItemType,
   JobDescriptionType,
   JobItemType,
   DataProps,
@@ -17,37 +18,75 @@ import type { PageProps } from "gatsby";
 const personalDetails = {
   name: "Victor Trofin",
   location: "Kyoto, Japan",
+  status: "Full-stack engineer · Scoville · Kyoto, Japan",
 };
 
-const skills: string[] = [
-  "Highly adaptable — grew from front-end lead to full technical ownership across the stack",
-  "Proactive problem solver — call center UI tripled agent efficiency; tackles root causes over quick fixes",
-  "Strong communicator — clear documentation and cross-functional collaboration across AI teams",
-  "Security-conscious — supply chain mitigation, GDPR data erasure and input validation",
-  "Languages spoken: native Romanian, fluent in English, basic Japanese",
+const skills: CompetencyItemType[] = [
+  {
+    label: "Adaptable",
+    description:
+      "Takes full ownership across the stack — UI, back-end, infrastructure, and DevOps",
+  },
+  {
+    label: "Problem solver",
+    description:
+      "Tripled call center agent efficiency; tackles root causes over quick fixes",
+  },
+  {
+    label: "Communicator",
+    description:
+      "Clear documentation and cross-functional collaboration across AI teams",
+  },
+  {
+    label: "Security-conscious",
+    description: "Supply chain mitigation, GDPR data erasure, input validation",
+  },
+  {
+    label: "Languages",
+    description: "Native Romanian, fluent English, basic Japanese",
+  },
 ];
 
-const technicalSkills: string[] = [
-  "Languages: TypeScript, ReScript",
-  "Front-end: React, React Router v7, Next.js, Vue.js, Tailwind CSS, shadcn/radix UI, Storybook",
-  "Back-end & APIs: Node.js, PostgreSQL, Drizzle ORM, Redis, MongoDB, REST, GraphQL" /*Fastify, Prisma */,
-  "AWS: Lambda, Fargate, EventBridge, SQS, S3, SES, Amazon Connect, DocumentDB",
-  "Infrastructure & DevOps: Terraform, CDK, SST, Docker, GitHub Actions",
-  "Testing & Monitoring: Jest, Vitest, Sentry",
+const technicalSkills: CompetencyItemType[] = [
+  { label: "Languages", description: "TypeScript" },
+  {
+    label: "Front-end",
+    description:
+      "React, React Router v7, Next.js, Vue.js, Tailwind CSS, shadcn/radix UI, Storybook",
+  },
+  {
+    label: "Back-end & APIs",
+    description:
+      "Node.js, PostgreSQL, Drizzle ORM, Redis, MongoDB, REST, GraphQL" /* Fastify, Prisma */,
+  },
+  {
+    label: "AWS",
+    description:
+      "Lambda, Fargate, EventBridge, SQS, S3, SES, Amazon Connect, DocumentDB",
+  },
+  {
+    label: "Infra & DevOps",
+    description: "Terraform, CDK, SST, Docker, GitHub Actions",
+  },
+  { label: "Testing", description: "Jest, Vitest, Sentry" },
+  {
+    label: "Also used",
+    description: "ReScript, Python (professional); Rust, Swift (personal)",
+  },
 ];
 
 const education: EducationItemType[] = [
-  {
-    yearStart: "2009",
-    yearEnd: "2013",
-    school:
-      "Bucharest University of Economic Studies - Master in International Business",
-  },
   {
     yearStart: "2003",
     yearEnd: "2008",
     school:
       "Politehnica University of Bucharest - Faculty of Power Engineering",
+  },
+  {
+    yearStart: "2009",
+    yearEnd: "2013",
+    school:
+      "Bucharest University of Economic Studies - Master in International Business",
   },
 ];
 
@@ -55,11 +94,11 @@ const scoville: JobDescriptionType = {
   description:
     "Three projects: an AI-powered call center, a video interview platform and an applicant tracking system",
   achievements: [
-    "Led the front-end of an AI-powered call center SPA, significantly improving agent efficiency; now tech lead with full ownership across front-end, back-end and infrastructure",
-    "Enabled agents to track missed inbound calls, schedule callbacks and manage campaigns; improved read performance with a DocumentDB read replica",
-    "Enabled recruiters to bulk-invite candidates, track invitation status and review post-interview feedback through a company-side portal; platform deployed serverless via SST on Lambda",
-    "Enabled recruiters to manage job applications and positions through a GraphQL-powered interface; built the candidate email pipeline supporting inbound parsing and document uploads to S3",
-    "Automated deployments across 10+ microservices via Terraform, CDK and GitHub Actions on AWS",
+    "Grew from front-end lead to full-stack tech lead on an AI-powered call center SPA, tripling agent call volume over a spreadsheet-based workflow",
+    "Built inbound call tracking, callback scheduling, and campaign management; added DocumentDB read replica for read performance",
+    "Delivered recruiter portal for bulk candidate invitations and interview feedback; deployed serverless on Lambda via SST",
+    "Built GraphQL-powered ATS for job and application management; engineered email pipeline with inbound parsing and S3 uploads",
+    "Automated deployments across 10+ microservices via Terraform, CDK, and GitHub Actions on AWS",
   ],
 };
 
@@ -116,12 +155,8 @@ const jobs: JobItemType[] = [
   },
 ];
 
-const other: string[] = [
-  "Python, Rust and Swift — foundational knowledge, able to contribute and ramp up quickly",
-  "Alumnus of Board of European Students of Technology",
-];
-
 const IndexPage: React.FunctionComponent<PageProps<DataProps>> = (props) => {
+  const isWestern = new URLSearchParams(props.location.search).get("western") === "true";
   const [pageBreakClass, setPageBreakClass] = useState("page-break");
   const [isBot, setIsBot] = useState(false);
   const [_isSafari, setIsSafari] = useState(false); // used to generate page breaks for print medium
@@ -149,34 +184,29 @@ const IndexPage: React.FunctionComponent<PageProps<DataProps>> = (props) => {
 
   return (
     <Layout>
+      <p className="pdf-hint">
+        Viewing Victor&apos;s CV —{" "}
+        <a href={isWestern ? "/cv-western.pdf" : "/cv.pdf"} download={isWestern ? "Victor_Trofin_CV_Western.pdf" : "Victor_Trofin_CV.pdf"}>
+          download as PDF
+        </a>
+      </p>
       <GeneralDetails
         personalDetails={{
           ...personalDetails,
           email: isBot ? "" : props.data.site.siteMetadata.email,
           phone: isBot ? "" : props.data.site.siteMetadata.phone,
         }}
+        western={isWestern}
       />
       <About />
 
-      <SimpleSection content={skills} subtitleText="Abilities" />
+      <CompetencyGrid items={skills} subtitleText="Abilities" />
 
-      <SimpleSection
-        content={technicalSkills}
-        subtitleText="Technical Skills"
-      />
+      <CompetencyGrid items={technicalSkills} subtitleText="Technical Skills" />
 
       <EmploymentSection jobs={jobs} subtitleText="Employment history" />
-      {/* <div className={pageBreakClass + " bottom"} /> */}
-      {/* {isSafari && <div className={pageBreakClass + " top"} />} */}
 
       <EducationSection education={education} subtitleText="Education" />
-      {/* <div className={pageBreakClass + " top"} /> */}
-
-      <SimpleSection
-        content={other}
-        subtitleText="Other activities and interests"
-      />
-      {/* {isSafari && <div className={pageBreakClass + " bottom"} />} */}
     </Layout>
   );
 };

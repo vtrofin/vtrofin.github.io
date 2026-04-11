@@ -625,6 +625,17 @@ pre tt:after {
 }
 
 /*My Css */
+.pdf-hint {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif;
+  font-size: 0.8rem;
+  color: #888;
+  text-align: right;
+  margin-bottom: 0.5rem;
+}
+.pdf-hint a {
+  color: #555;
+}
+
 .layout {
   margin: 50px auto 0;
   max-width: 960px;
@@ -683,12 +694,16 @@ pre tt:after {
   transition: opacity 300ms, transform 300ms;
 }
 
+.contacts {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
 .contacts a {
   display: inline-block;
   vertical-align: middle;
-}
-.contacts a:first-child {
-  margin-right: 20px;
 }
 img#git-icon {
   margin-bottom: 0;
@@ -706,6 +721,34 @@ img#envelope-icon {
 .profilePic img {
   border-radius: 2%;
   margin-bottom: 0.7rem;
+}
+.status-line {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 0.7rem;
+}
+.competency-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.4rem;
+  margin-bottom: 1.45rem;
+}
+.competency-item {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+}
+.competency-item strong {
+  flex-shrink: 0;
+  min-width: 10rem;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif;
+  font-size: 1.1rem;
+}
+.competency-item span {
+  font-size: 1.1rem;
+  line-height: 1.4;
 }
 .about-container p {
   margin-bottom: 0px;
@@ -859,9 +902,20 @@ ul.achievements {
   .about-container {
     padding-left: 20px;
   }
+  .pdf-hint {
+    display: none;
+  }
   .contacts,
   .phone-number-button {
     display: none;
+  }
+  .competency-grid {
+    gap: 0.15rem;
+    margin-bottom: 0.5rem;
+  }
+  .competency-item span,
+  .competency-item strong {
+    font-size: 0.75rem;
   }
   .paper-email {
     display: block;
