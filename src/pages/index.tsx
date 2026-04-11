@@ -68,7 +68,7 @@ const technicalSkills: CompetencyItemType[] = [
     label: "Infra & DevOps",
     description: "Terraform, CDK, SST, Docker, GitHub Actions",
   },
-  { label: "Testing", description: "Jest, Vitest, Sentry" },
+  { label: "Test & Monitor", description: "Jest, Vitest, Sentry" },
   {
     label: "Also used",
     description: "ReScript, Python (professional); Rust, Swift (personal)",
@@ -172,19 +172,19 @@ const IndexPage: React.FunctionComponent<PageProps<DataProps>> = (props) => {
     const isSafari = /safari/gi.test(agent);
     const bot =
       /bot|googlebot|crawler|spider|robot|crawling|google|baidu|bing|msn|teoma|slurp|yandex/i.test(
-        window.navigator.userAgent,
+        agent,
       );
     setIsBot(bot);
 
     if (isFirefox) {
-      setPageBreakClass(pageBreakClass + " firefox");
+      setPageBreakClass((prev) => prev + " firefox");
     } else if (isChrome) {
-      setPageBreakClass(pageBreakClass + " chrome");
+      setPageBreakClass((prev) => prev + " chrome");
     } else if (!isChrome && isSafari) {
       setIsSafari(true);
-      setPageBreakClass(pageBreakClass + " safari");
+      setPageBreakClass((prev) => prev + " safari");
     }
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <Layout>
