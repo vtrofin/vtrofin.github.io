@@ -976,8 +976,8 @@ ul.achievements {
     margin-bottom: 0;
   }
   .sectionSubtitle {
-    margin-top: 16px;
-    margin-bottom: 12px;
+    margin-top: 1rem;
+    margin-bottom: 0.75rem;
   }
   .sectionSubtitle h2 {
     font-size: 1rem;
