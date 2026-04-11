@@ -750,6 +750,15 @@ img#envelope-icon {
   font-size: 1.1rem;
   line-height: 1.4;
 }
+@media (max-width: 600px) {
+  .competency-item {
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+  .competency-item strong {
+    min-width: unset;
+  }
+}
 .about-container p {
   margin-bottom: 0px;
   font-size: 1.12rem;
