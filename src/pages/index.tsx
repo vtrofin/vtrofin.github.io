@@ -23,8 +23,8 @@ const IndexPage: React.FunctionComponent<PageProps<DataProps>> = (props) => {
   );
   const [isBot, setIsBot] = useState(false);
 
-  const email = isBot ? "" : props.data.site.siteMetadata.email;
-  const phone = isBot ? "" : props.data.site.siteMetadata.phone;
+  const email = isBot ? "" : (props.data.site.siteMetadata.email ?? "");
+  const phone = isBot ? "" : (props.data.site.siteMetadata.phone ?? "");
 
   useEffect(() => {
     const agent = window.navigator.userAgent;
