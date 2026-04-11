@@ -115,6 +115,7 @@ const jobs: JobItemType[] = [
   {
     company: "Scoville",
     yearStart: "May 2021",
+    yearEnd: "present",
     jobTitle: "Full-stack web engineer, Kyoto",
     jobDescription: [scoville],
   },
@@ -132,7 +133,7 @@ const jobs: JobItemType[] = [
     yearEnd: "2018",
     jobTitle: "English teacher, Kyoto",
     jobDescription: [
-      "Taught English while re-focusing my career towards full-time web-engineering",
+      "Taught English in Kyoto; used the period to transition into full-time web engineering",
     ],
   },
   {
