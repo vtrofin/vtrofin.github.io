@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { graphql } from "gatsby";
 import Layout from "@components/Layout";
 import GeneralDetails from "@components/GeneralDetails";
@@ -15,25 +15,17 @@ import {
   skills,
   technicalSkills,
 } from "../data";
+import { useBotDetection } from "../hooks/useBotDetection";
 
 const IndexPage: React.FunctionComponent<PageProps<DataProps>> = (props) => {
   const isWestern = React.useMemo(
     () => new URLSearchParams(props.location.search).get("western") === "true",
     [props.location.search],
   );
-  const [isBot, setIsBot] = useState(false);
+  const isBot = useBotDetection();
 
   const email = isBot ? "" : (props.data.site.siteMetadata.email ?? "");
   const phone = isBot ? "" : (props.data.site.siteMetadata.phone ?? "");
-
-  useEffect(() => {
-    const agent = window.navigator.userAgent;
-    const bot =
-      /bot|googlebot|crawler|spider|robot|crawling|google|baidu|bing|msn|teoma|slurp|yandex/i.test(
-        agent,
-      );
-    setIsBot(bot);
-  }, []);
 
   return (
     <Layout>
