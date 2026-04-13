@@ -117,7 +117,7 @@ const jobs: JobItemType[] = [
     jobDescription: [shipandco],
   },
   {
-    company: "Universal Campus | 京進の英会話教室 ユニバーサルキャンパス",
+    company: "Kyoshin Universal Campus", // 京進の英会話教室 ユニバーサルキャンパス
     yearStart: "2016",
     yearEnd: "2018",
     jobTitle: "English teacher, Kyoto",
