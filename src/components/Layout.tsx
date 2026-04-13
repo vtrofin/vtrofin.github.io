@@ -1,33 +1,24 @@
 import React from "react";
 import Helmet from "react-helmet";
 import "../styles/index.css";
+import { previewData } from "../data";
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
-  name: "Victor Trofin",
-  jobTitle: "Senior Full-Stack Engineer",
-  url: "https://vtrofin.github.io",
+  name: previewData.name,
+  jobTitle: previewData.jobTitle,
+  url: previewData.url,
   address: {
     "@type": "PostalAddress",
-    addressLocality: "Kyoto",
-    addressCountry: "JP",
+    addressLocality: previewData.location.city,
+    addressCountry: previewData.location.country,
   },
   worksFor: {
     "@type": "Organization",
-    name: "Scoville",
+    name: previewData.organization,
   },
-  knowsAbout: [
-    "TypeScript",
-    "React",
-    "Next.js",
-    "Node.js",
-    "PostgreSQL",
-    "GraphQL",
-    "AWS",
-    "Terraform",
-    "Docker",
-  ],
+  knowsAbout: previewData.skills,
 };
 
 const Layout = ({ children }: React.PropsWithChildren) => (

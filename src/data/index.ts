@@ -146,4 +146,30 @@ const jobs: JobItemType[] = [
   },
 ];
 
-export { education, jobs, personalDetails, skills, technicalSkills };
+const previewData = {
+  name: personalDetails.name,
+  jobTitle: "Senior Full-Stack Engineer",
+  url: "https://vtrofin.github.io",
+  location: { city: "Kyoto", country: "JP" },
+  organization: jobs[0].company,
+  skills: [
+    "TypeScript",
+    "React",
+    "Next.js",
+    "Node.js",
+    "PostgreSQL",
+    "GraphQL",
+    "AWS",
+    "Terraform",
+    "Docker",
+  ],
+};
+
+export {
+  education,
+  jobs,
+  personalDetails,
+  skills,
+  technicalSkills,
+  previewData,
+};
