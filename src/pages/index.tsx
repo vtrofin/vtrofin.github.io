@@ -14,7 +14,7 @@ import {
   personalDetails,
   skills,
   technicalSkills,
-} from "./data";
+} from "../data";
 
 const IndexPage: React.FunctionComponent<PageProps<DataProps>> = (props) => {
   const isWestern = React.useMemo(
