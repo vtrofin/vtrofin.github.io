@@ -113,7 +113,6 @@ const jobs: JobItemType[] = [
     company: "Ship&co",
     yearStart: "Feb 2018",
     yearEnd: "Apr 2021",
-    // city: 'Kyoto',
     jobTitle: "Full-stack web engineer, Kyoto",
     jobDescription: [shipandco],
   },
