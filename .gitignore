@@ -71,3 +71,4 @@ _bmad*
 .claude
 .cursor
 .vscode/settings.json
+/src/data/*.md
