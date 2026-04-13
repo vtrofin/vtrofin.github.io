@@ -29,7 +29,7 @@ const Layout = ({ children }: React.PropsWithChildren) => (
         {
           name: "description",
           content:
-            "Senior full-stack engineer and tech lead based in Kyoto, Japan. Experienced in TypeScript, React, Node.js, and AWS infrastructure.",
+            "Senior full-stack engineer based in Kyoto, Japan. Experienced in TypeScript, React, Node.js, and AWS infrastructure.",
         },
         {
           name: "keywords",
