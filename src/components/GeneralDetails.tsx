@@ -12,14 +12,15 @@ const GeneralDetails: React.FunctionComponent<{
   personalDetails: PersonalDetailsType;
   western?: boolean;
 }> = ({ personalDetails, western = false }) => {
-  const { name, email, phone, status } = personalDetails;
+  const { name, email, phone, status: propStatus, location } = personalDetails;
+  const status = propStatus ?? `Romanian national living in ${location}`;
+
   return (
     <header className="generalDetails">
       <div className="generalText">
         <h1>{name}</h1>
         <h3>トロフィン ビクトル</h3>
-        {status && <p className="status-line">{status}</p>}
-        {/* <p>Romanian national living in {location}</p> */}
+        <p className="status-line">{status}</p>
         {!western && <p>Married, one child &nbsp;|&nbsp; Age: {getAge()}</p>}
         <Phone phone={phone} />
         <p className="paper-email">{email}</p>
