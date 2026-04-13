@@ -6,7 +6,7 @@ const SimpleSection: React.FunctionComponent<{
   subtitleText: string;
 }> = ({ content, subtitleText }) => {
   return (
-    <div>
+    <section>
       <SectionSubtitle subtitleText={subtitleText} />
       <div className="simpleSection">
         <ul>
@@ -15,7 +15,7 @@ const SimpleSection: React.FunctionComponent<{
           ))}
         </ul>
       </div>
-    </div>
+    </section>
   );
 };
 

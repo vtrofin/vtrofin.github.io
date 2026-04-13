@@ -66,3 +66,9 @@ typings/
 .env
 .env.development
 .env.production
+
+_bmad*
+.claude
+.cursor
+.vscode/settings.json
+src/data/*.md

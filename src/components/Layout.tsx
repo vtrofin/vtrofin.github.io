@@ -1,22 +1,51 @@
 import React from "react";
 import Helmet from "react-helmet";
 import "../styles/index.css";
+import { previewData } from "../data";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: previewData.name,
+  jobTitle: previewData.jobTitle,
+  url: previewData.url,
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: previewData.location.city,
+    addressCountry: previewData.location.country,
+  },
+  worksFor: {
+    "@type": "Organization",
+    name: previewData.organization,
+  },
+  knowsAbout: previewData.skills,
+};
 
 const Layout = ({ children }: React.PropsWithChildren) => (
-  <div>
+  <>
     <Helmet
-      title="Victor Trofin, web engineer in Japan"
+      title="Victor Trofin — Senior Full-Stack Engineer, Kyoto"
       meta={[
         {
           name: "description",
           content:
-            "Full-stack web engineer in Kyoto, Japan. Currently at Ship&co, working with Node.js, Vue.js and React",
+            "Senior full-stack engineer based in Kyoto, Japan. Experienced in TypeScript, React, Node.js, and AWS infrastructure.",
         },
-        { name: "keywords", content: "React, Vue.js, Node.js, CV, Kyoto" },
+        {
+          name: "keywords",
+          content:
+            "TypeScript, React, Node.js, AWS, full-stack engineer, tech lead, Kyoto, Japan",
+        },
+      ]}
+      script={[
+        {
+          type: "application/ld+json",
+          innerHTML: JSON.stringify(jsonLd),
+        },
       ]}
     />
-    <div className="layout">{children}</div>
-  </div>
+    <main className="layout">{children}</main>
+  </>
 );
 
 export default Layout;

@@ -625,6 +625,17 @@ pre tt:after {
 }
 
 /*My Css */
+.pdf-hint {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif;
+  font-size: 0.8rem;
+  color: #888;
+  text-align: right;
+  margin-bottom: 0.5rem;
+}
+.pdf-hint a {
+  color: #555;
+}
+
 .layout {
   margin: 50px auto 0;
   max-width: 960px;
@@ -632,7 +643,7 @@ pre tt:after {
   padding-top: 0;
 }
 .headerDiv {
-  height: 50px;
+  height: 3.125rem;
 }
 .generalDetails {
   display: flex;
@@ -644,13 +655,15 @@ pre tt:after {
   align-items: flex-start;
   justify-content: center;
   margin-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 .generalText h1 {
-  font-size: 2.6rem;
+  font-size: clamp(1.8rem, 5vw, 2.6rem);
   margin-bottom: 1.5rem;
 }
 .generalText p {
-  font-size: 1.3rem;
+  font-size: clamp(1rem, 3.5vw, 1.3rem);
   margin-bottom: 0.7rem;
 }
 .paper-email {
@@ -683,29 +696,71 @@ pre tt:after {
   transition: opacity 300ms, transform 300ms;
 }
 
+.contacts {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
 .contacts a {
   display: inline-block;
   vertical-align: middle;
-}
-.contacts a:first-child {
-  margin-right: 20px;
 }
 img#git-icon {
   margin-bottom: 0;
 }
 img#envelope-icon {
   margin-bottom: 0;
-  width: 78%;
+  width: 1.5rem;
+  height: 1.5rem;
 }
 .profilePic {
   text-align: center;
-  margin-top: 30px;
-  margin-bottom: 30px;
+  margin-top: 1.875rem;
+  margin-bottom: 1.875rem;
   flex-shrink: 2;
 }
 .profilePic img {
   border-radius: 2%;
   margin-bottom: 0.7rem;
+}
+.status-line {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 0.7rem;
+}
+.competency-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1.45rem;
+}
+.competency-item {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+}
+.competency-item strong {
+  flex-shrink: 0;
+  min-width: 10rem;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif;
+  font-size: 1.1rem;
+}
+.competency-item span {
+  font-size: 1.1rem;
+  line-height: 1.4;
+}
+@media (max-width: 600px) {
+  .competency-item {
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+  .competency-item strong {
+    min-width: unset;
+  }
 }
 .about-container p {
   margin-bottom: 0px;
@@ -719,7 +774,7 @@ img#envelope-icon {
 }
 .about-container.large p {
   font-size: 1.12rem;
-  margin-right: 40px;
+  margin-right: 2.5rem;
   text-align: justify;
 }
 .about-container.small p {
@@ -727,13 +782,13 @@ img#envelope-icon {
 }
 .sectionSubtitle {
   border-bottom: 1px solid #c1c1c1;
-  margin-top: 65px;
-  margin-bottom: 20px;
+  margin-top: clamp(1.875rem, 5vw, 4.0625rem);
+  margin-bottom: 1.25rem;
   text-transform: uppercase;
 }
 .sectionSubtitle h2 {
   font-size: 1rem;
-  text-indent: 10px;
+  text-indent: 0.625rem;
 }
 ul.jobsUl {
   list-style: none;
@@ -757,6 +812,8 @@ ul.achievements {
 .jobItemFirstLine {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.25rem;
 }
 .jobItemFirstLine h3 {
   font-size: 1.2rem;
@@ -786,11 +843,11 @@ ul.achievements {
     justify-content: center;
     align-items: flex-start;
     width: 75%;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
   }
   .about-container {
-    padding-left: 20px;
+    padding-left: 1.25rem;
   }
   .profilePic {
     flex-shrink: 3;
@@ -815,30 +872,52 @@ ul.achievements {
     display: none;
   }
 }
-@media all {
-  .page-break {
-    display: none;
-  }
+
+.page-break {
+  display: none;
+}
+
+
+@page {
+  margin: 1cm;
 }
 
 @media print {
-  /* basic print support for A4 paper */
+  /* basic print support optimized for A4 paper */
   .layout {
     padding-bottom: 0;
     padding-top: 0;
     margin-top: 0;
   }
-  .page-break.chrome,
-  .page-break.firefox,
-  .page-break.safari
-   {
-    display: block;
-    page-break-before: always;
+  @supports (-moz-appearance: none) {
+    /* Firefox */
+    .page-break {
+      display: block;
+      break-before: page;
+    }
+    .page-break.bottom {
+      break-after: avoid;
+    }
   }
-  .page-break.chrome.bottom,
-  .page-break.firefox.bottom,
-  .page-break.safari.bottom {
-    page-break-before: avoid;
+  @supports (-webkit-touch-callout: none) {
+    /* Safari */
+    .page-break {
+      display: block;
+      break-before: page;
+    }
+    .page-break.bottom {
+      break-after: avoid;
+    }
+  }
+  @supports (not (-moz-appearance: none)) and (not (-webkit-touch-callout: none)) and (-webkit-appearance: none) {
+    /* Chrome / Chromium */
+    .page-break {
+      display: block;
+      break-before: page;
+    }
+    .page-break.bottom {
+      break-after: avoid;
+    }
   }
 
   .generalDetails {
@@ -849,15 +928,26 @@ ul.achievements {
     justify-content: center;
     align-items: flex-start;
     width: 75%;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
   }
   .about-container {
-    padding-left: 20px;
+    padding-left: 1.25rem;
+  }
+  .pdf-hint {
+    display: none;
   }
   .contacts,
   .phone-number-button {
     display: none;
+  }
+  .competency-grid {
+    gap: 0.15rem;
+    margin-bottom: 0.5rem;
+  }
+  .competency-item span,
+  .competency-item strong {
+    font-size: 0.75rem;
   }
   .paper-email {
     display: block;
@@ -880,14 +970,14 @@ ul.achievements {
   }
   .generalText p,
   .about-container p,
-  ul li,
+  .layout ul li,
   .footer-text {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     margin-bottom: 0;
   }
   .sectionSubtitle {
-    margin-top: 16px;
-    margin-bottom: 12px;
+    margin-top: 1rem;
+    margin-bottom: 0.75rem;
   }
   .sectionSubtitle h2 {
     font-size: 1rem;
@@ -910,10 +1000,6 @@ ul.achievements {
   }
   .footer-text {
     margin-top: 1rem;
-  }
-  a {
-    text-decoration: none;
-    color: inherit;
   }
 }
 

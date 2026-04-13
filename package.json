@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
+    "deploy": "gatsby build --prefix-paths && pnpm run generate-pdf && gh-pages -d public",
     "gatsby": "gatsby",
-    "build": "tsc && gatsby build",
+    "build": "tsc && gatsby build && pnpm run generate-pdf",
+    "generate-pdf": "node scripts/generate-pdf.mjs",
     "develop": "gatsby develop -H 0.0.0.0",
     "ts:check": "tsc --noEmit"
   },
@@ -25,25 +26,31 @@
   },
   "homepage": "https://github.com/vtrofin/vtrofin.github.io#readme",
   "devDependencies": {
-    "@types/node": "^20.12.12",
-    "@types/react": "^18.3.2",
-    "@types/react-dom": "^18.3.0",
+    "@types/node": "^24.1.0",
+    "@types/react": "^18.3.28",
+    "@types/react-dom": "^18.3.7",
     "@types/react-helmet": "^6.1.11",
-    "@types/react-transition-group": "^4.4.10",
-    "gatsby-cli": "^5.13.2",
-    "gh-pages": "^6.1.1",
+    "@types/react-transition-group": "^4.4.12",
+    "gatsby-cli": "^5.16.0",
+    "gh-pages": "^6.3.0",
+    "puppeteer": "^24.40.0",
     "react-helmet": "^6.1.0",
-    "typescript": "^5.4.5"
+    "typescript": "^5.9.3"
   },
   "dependencies": {
-    "date-fns": "^3.3.1",
-    "gatsby": "^5.13.3",
-    "gatsby-link": "^5.13.1",
-    "gatsby-plugin-react-helmet": "^6.13.1",
-    "query-string": "^8.2.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "date-fns": "^4.1.0",
+    "gatsby": "^5.16.1",
+    "gatsby-link": "^5.16.0",
+    "gatsby-plugin-react-helmet": "^6.16.0",
+    "query-string": "^9.3.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "react-transition-group": "^4.4.5"
   },
-  "packageManager": "pnpm@9.1.2+sha512.127dc83b9ea10c32be65d22a8efb4a65fb952e8fefbdfded39bdc3c97efc32d31b48b00420df2c1187ace28c921c902f0cb5a134a4d032b8b5295cbfa2c681e2"
+  "packageManager": "pnpm@10.30.1+sha512.3590e550d5384caa39bd5c7c739f72270234b2f6059e13018f975c313b1eb9fefcc09714048765d4d9efe961382c312e624572c0420762bdc5d5940cdf9be73a",
+  "pnpm": {
+    "overrides": {
+      "msgpackr": "^1.11.9"
+    }
+  }
 }

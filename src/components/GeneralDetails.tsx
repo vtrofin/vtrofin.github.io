@@ -1,38 +1,27 @@
 import React from "react";
-import { differenceInYears } from "date-fns";
 import Phone from "./Phone";
 import Photo from "./Photo";
 import profilePic from "../images/victor_light_yellow.jpg";
 import githubIco from "../images/ico-github.svg";
 import envelope from "../images/envelope.svg";
 import { PersonalDetailsType } from "@typedefs/propTypes";
+import { getAge } from "../utils/dateUtils";
 
-const getAge = () => {
-  const birthdate = new Date("1984-09-05T06:00:00+0200");
-  const today = new Date();
-  const age = differenceInYears(today, birthdate);
-  if (Number.isNaN(age)) {
-    // date fns seems to fail in safari
-    const month = today.getMonth() + 1;
-    const day = today.getDay();
-    const safariAge = today.getFullYear() - 1984;
-    return month >= 9 && day >= 5 ? safariAge : safariAge - 1;
-  }
-  return age;
-};
-
+// western type cv will remove the Japanese required age, marital status, etc.
 const GeneralDetails: React.FunctionComponent<{
   personalDetails: PersonalDetailsType;
-}> = ({ personalDetails }) => {
-  const { name, location, email, phone } = personalDetails;
+  western?: boolean;
+}> = ({ personalDetails, western = false }) => {
+  const { name, email, phone, status: propStatus, location } = personalDetails;
+  const status = propStatus ?? `Romanian national living in ${location}`;
+
   return (
-    <div className="generalDetails">
+    <header className="generalDetails">
       <div className="generalText">
         <h1>{name}</h1>
         <h3>トロフィン ビクトル</h3>
-        <p>Romanian national living in {location}</p>
-        <p>Married, one child</p>
-        <p>Age: {getAge()}</p>
+        <p className="status-line">{status}</p>
+        {!western && <p>Married, one child &nbsp;|&nbsp; Age: {getAge()}</p>}
         <Phone phone={phone} />
         <p className="paper-email">{email}</p>
         <div className="contacts">
@@ -50,7 +39,7 @@ const GeneralDetails: React.FunctionComponent<{
         </div>
       </div>
       <Photo src={profilePic} />
-    </div>
+    </header>
   );
 };
 
