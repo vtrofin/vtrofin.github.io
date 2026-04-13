@@ -733,8 +733,8 @@ img#envelope-icon {
   margin-bottom: 0.7rem;
 }
 .competency-grid {
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column;
   gap: 0.4rem;
   margin-bottom: 1.45rem;
 }
