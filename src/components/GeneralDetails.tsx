@@ -1,26 +1,13 @@
 import React from "react";
-import { differenceInYears } from "date-fns";
 import Phone from "./Phone";
 import Photo from "./Photo";
 import profilePic from "../images/victor_light_yellow.jpg";
 import githubIco from "../images/ico-github.svg";
 import envelope from "../images/envelope.svg";
 import { PersonalDetailsType } from "@typedefs/propTypes";
+import { getAge } from "../utils/dateUtils";
 
-const getAge = () => {
-  const birthdate = new Date("1984-09-05T06:00:00+0200");
-  const today = new Date();
-  const age = differenceInYears(today, birthdate);
-  if (Number.isNaN(age)) {
-    // date fns seems to fail in safari
-    const month = today.getMonth() + 1;
-    const day = today.getDay();
-    const safariAge = today.getFullYear() - 1984;
-    return month >= 9 && day >= 5 ? safariAge : safariAge - 1;
-  }
-  return age;
-};
-
+// western type cv will remove the Japanese required age, marital status, etc.
 const GeneralDetails: React.FunctionComponent<{
   personalDetails: PersonalDetailsType;
   western?: boolean;
