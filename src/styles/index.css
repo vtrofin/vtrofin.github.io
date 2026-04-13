@@ -643,7 +643,7 @@ pre tt:after {
   padding-top: 0;
 }
 .headerDiv {
-  height: 50px;
+  height: 3.125rem;
 }
 .generalDetails {
   display: flex;
@@ -699,7 +699,7 @@ pre tt:after {
 .contacts {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 1.25rem;
   flex-wrap: wrap;
   margin-top: 0.5rem;
 }
@@ -712,13 +712,13 @@ img#git-icon {
 }
 img#envelope-icon {
   margin-bottom: 0;
-  width: 24px;
-  height: 24px;
+  width: 1.5rem;
+  height: 1.5rem;
 }
 .profilePic {
   text-align: center;
-  margin-top: 30px;
-  margin-bottom: 30px;
+  margin-top: 1.875rem;
+  margin-bottom: 1.875rem;
   flex-shrink: 2;
 }
 .profilePic img {
@@ -774,7 +774,7 @@ img#envelope-icon {
 }
 .about-container.large p {
   font-size: 1.12rem;
-  margin-right: 40px;
+  margin-right: 2.5rem;
   text-align: justify;
 }
 .about-container.small p {
@@ -782,13 +782,13 @@ img#envelope-icon {
 }
 .sectionSubtitle {
   border-bottom: 1px solid #c1c1c1;
-  margin-top: clamp(30px, 5vw, 65px);
-  margin-bottom: 20px;
+  margin-top: clamp(1.875rem, 5vw, 4.0625rem);
+  margin-bottom: 1.25rem;
   text-transform: uppercase;
 }
 .sectionSubtitle h2 {
   font-size: 1rem;
-  text-indent: 10px;
+  text-indent: 0.625rem;
 }
 ul.jobsUl {
   list-style: none;
@@ -843,11 +843,11 @@ ul.achievements {
     justify-content: center;
     align-items: flex-start;
     width: 75%;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
   }
   .about-container {
-    padding-left: 20px;
+    padding-left: 1.25rem;
   }
   .profilePic {
     flex-shrink: 3;
@@ -928,11 +928,11 @@ ul.achievements {
     justify-content: center;
     align-items: flex-start;
     width: 75%;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
   }
   .about-container {
-    padding-left: 20px;
+    padding-left: 1.25rem;
   }
   .pdf-hint {
     display: none;
