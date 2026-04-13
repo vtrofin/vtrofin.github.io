@@ -3,24 +3,29 @@
 // and printing it headlessly via Puppeteer.
 // Run after `gatsby build`: node scripts/generate-pdf.js
 
-const puppeteer = require("puppeteer");
-const { spawn } = require("child_process");
-const http = require("http");
-const path = require("path");
+import puppeteer from "puppeteer";
+import { spawn } from "child_process";
+import http from "http";
+import { dirname, resolve } from "path";
+import { fileURLToPath } from "url";
 
 const PORT = 9876;
-const OUTPUT = path.resolve(__dirname, "../public/cv.pdf");
-const GATSBY_BIN = path.resolve(__dirname, "../node_modules/.bin/gatsby");
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+const OUTPUT = resolve(__dirname, "../public/cv.pdf");
+const OUTPUT_WESTERN = resolve(__dirname, "../public/cv-western.pdf");
+const GATSBY_BIN = resolve(__dirname, "../node_modules/.bin/gatsby");
 
 function waitForServer(retries = 30, delay = 500) {
   return new Promise((resolve, reject) => {
     const attempt = (n) => {
-      http
-        .get(`http://localhost:${PORT}`, resolve)
-        .on("error", () => {
-          if (n <= 0) return reject(new Error("Server did not start in time"));
-          setTimeout(() => attempt(n - 1), delay);
-        });
+      http.get(`http://localhost:${PORT}`, resolve).on("error", () => {
+        if (n <= 0) {
+          return reject(new Error("Server did not start in time"));
+        }
+
+        setTimeout(() => attempt(n - 1), delay);
+      });
     };
     attempt(retries);
   });
@@ -29,7 +34,7 @@ function waitForServer(retries = 30, delay = 500) {
 async function generate() {
   console.log("Starting local server…");
   const server = spawn(GATSBY_BIN, ["serve", "-p", String(PORT)], {
-    cwd: path.resolve(__dirname, ".."),
+    cwd: resolve(__dirname, ".."),
     stdio: "ignore",
   });
 
@@ -50,15 +55,17 @@ async function generate() {
     });
     console.log("CV PDF written to", OUTPUT);
 
-    await page.goto(`http://localhost:${PORT}?western=true`, { waitUntil: "networkidle0" });
+    await page.goto(`http://localhost:${PORT}?western=true`, {
+      waitUntil: "networkidle0",
+    });
     await page.click(".phone-number-button");
     await page.pdf({
-      path: OUTPUT.replace("cv.pdf", "cv-western.pdf"),
+      path: OUTPUT_WESTERN,
       format: "A4",
       printBackground: false,
       margin: { top: "1cm", right: "1cm", bottom: "1cm", left: "1cm" },
     });
-    console.log("Western CV PDF written to", OUTPUT.replace("cv.pdf", "cv-western.pdf"));
+    console.log("Western CV PDF written to", OUTPUT_WESTERN);
 
     await browser.close();
   } finally {
