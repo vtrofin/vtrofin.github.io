@@ -70,3 +70,4 @@ typings/
 _bmad*
 .claude
 .cursor
+.vscode/settings.json

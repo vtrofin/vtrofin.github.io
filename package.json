@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "gatsby build --prefix-paths && node scripts/generate-pdf.js && gh-pages -d public",
+    "deploy": "gatsby build --prefix-paths && pnpm run generate-pdf && gh-pages -d public",
     "gatsby": "gatsby",
-    "build": "tsc && gatsby build && node scripts/generate-pdf.js",
+    "build": "tsc && gatsby build && pnpm run generate-pdf",
     "generate-pdf": "node scripts/generate-pdf.js",
     "develop": "gatsby develop -H 0.0.0.0",
     "ts:check": "tsc --noEmit"
