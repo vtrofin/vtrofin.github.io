@@ -49,7 +49,6 @@ const IndexPage: React.FunctionComponent<PageProps<DataProps>> = (props) => {
       <CompetencyGrid items={technicalSkills} subtitleText="Technical Skills" />
       <EmploymentSection jobs={jobs} subtitleText="Employment history" />
       {/* <div className={"page-break" + " bottom"} /> */}
-      {/* {<div className={"page-break" + " top"} />} */}
       <EducationSection education={education} subtitleText="Education" />
     </Layout>
   );
