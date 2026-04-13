@@ -22,7 +22,7 @@ const IndexPage: React.FunctionComponent<PageProps<DataProps>> = (props) => {
     () => new URLSearchParams(props.location.search).get("western") === "true",
     [props.location.search],
   );
-  const isBot = useBotDetection();
+  const { isBot } = useBotDetection();
 
   const email = isBot ? "" : (props.data.site.siteMetadata.email ?? "");
   const phone = isBot ? "" : (props.data.site.siteMetadata.phone ?? "");

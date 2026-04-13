@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 const botUserAgentRegex =
   /bot|googlebot|crawler|spider|robot|crawling|google|baidu|bing|msn|teoma|slurp|yandex/i;
 
-function useBotDetection(): boolean {
+function useBotDetection(): { isBot: boolean } {
   const [isBot, setIsBot] = useState(false);
 
   useEffect(() => {
@@ -15,7 +15,7 @@ function useBotDetection(): boolean {
     setIsBot(botUserAgentRegex.test(agent));
   }, []);
 
-  return isBot;
+  return { isBot };
 }
 
 export { useBotDetection };
