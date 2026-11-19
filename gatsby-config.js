@@ -11,5 +11,4 @@ module.exports = {
     email: process.env.EMAIL,
     mainSite: process.env.MAIN_SITE,
   },
-  plugins: [`gatsby-plugin-react-helmet`],
 };
