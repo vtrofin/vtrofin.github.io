@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { CSSTransition } from "react-transition-group";
 
 const Phone: React.FunctionComponent<{ phone: string }> = ({ phone = "" }) => {
   const [showNumber, setShowNumber] = useState(false);
+  const nodeRef = useRef<HTMLParagraphElement>(null);
   // least effort animation
   // see http://reactcommunity.org/react-transition-group/css-transition
   // minor transition issue on afterprint but not a big deal
@@ -28,13 +29,16 @@ const Phone: React.FunctionComponent<{ phone: string }> = ({ phone = "" }) => {
         </div>
       )}
       <CSSTransition
+        nodeRef={nodeRef}
         timeout={300}
         in={showNumber}
         classNames="phone-number"
         onExited={() => setShowNumber(false)}
         unmountOnExit
       >
-        {<p className="phone-number">{phone}</p>}
+        <p ref={nodeRef} className="phone-number">
+          {phone}
+        </p>
       </CSSTransition>
     </div>
   );
