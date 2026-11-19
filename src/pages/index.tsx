@@ -1,6 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
-import Layout from "@components/Layout";
+import Layout, { Head } from "@components/Layout";
 import GeneralDetails from "@components/GeneralDetails";
 import About from "@components/About";
 import CompetencyGrid from "@components/CompetencyGrid";
@@ -55,6 +55,8 @@ const IndexPage: React.FunctionComponent<PageProps<DataProps>> = (props) => {
 };
 
 export default IndexPage;
+
+export { Head };
 
 export const query = graphql`
   query {

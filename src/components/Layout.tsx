@@ -1,5 +1,4 @@
 import React from "react";
-import Helmet from "react-helmet";
 import "../styles/index.css";
 import { previewData } from "../data";
 
@@ -21,31 +20,25 @@ const jsonLd = {
   knowsAbout: previewData.skills,
 };
 
+export function Head() {
+  return (
+    <>
+      <title>Victor Trofin — Senior Full-Stack Engineer, Kyoto</title>
+      <meta
+        name="description"
+        content="Senior full-stack engineer based in Kyoto, Japan. Experienced in TypeScript, React, Node.js, and AWS infrastructure."
+      />
+      <meta
+        name="keywords"
+        content="TypeScript, React, Node.js, AWS, full-stack engineer, tech lead, Kyoto, Japan"
+      />
+      <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
+    </>
+  );
+}
+
 const Layout = ({ children }: React.PropsWithChildren) => (
-  <>
-    <Helmet
-      title="Victor Trofin — Senior Full-Stack Engineer, Kyoto"
-      meta={[
-        {
-          name: "description",
-          content:
-            "Senior full-stack engineer based in Kyoto, Japan. Experienced in TypeScript, React, Node.js, and AWS infrastructure.",
-        },
-        {
-          name: "keywords",
-          content:
-            "TypeScript, React, Node.js, AWS, full-stack engineer, tech lead, Kyoto, Japan",
-        },
-      ]}
-      script={[
-        {
-          type: "application/ld+json",
-          innerHTML: JSON.stringify(jsonLd),
-        },
-      ]}
-    />
-    <main className="layout">{children}</main>
-  </>
+  <main className="layout">{children}</main>
 );
 
 export default Layout;
