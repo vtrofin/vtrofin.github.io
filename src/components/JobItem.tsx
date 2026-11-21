@@ -1,49 +1,46 @@
-import { JobItemType, JobDescriptionType } from "@typedefs/propTypes";
-import React from "react";
+import { JobDescriptionType, JobItemType } from "@typedefs/propTypes";
 
-const JobTitle: React.FunctionComponent<{ title: string }> = ({ title }) => {
-  return title ? <p style={{ fontStyle: "italic" }}>{title}</p> : null;
-};
-
-const LineItem: React.FunctionComponent<{ item: JobDescriptionType }> = ({
-  item,
-}) => {
-  if (typeof item === "string") return <li>{item}</li>;
+const LineItem = ({ item }: { item: JobDescriptionType }) => {
+  if (typeof item === "string") {
+    return (
+      <ul className="list-disc pl-5">
+        <li>{item}</li>
+      </ul>
+    );
+  }
 
   const { description, achievements } = item;
   return (
-    <li className="no-indent">
-      {description}
-      <ul className="achievements">
-        {achievements.map((line, i) => (
-          <li key={i}>{line}</li>
+    <div className="py-3 print:py-[0.2rem]">
+      <p className="mb-1.5 print:mb-0">{description}</p>
+      <ul className="list-disc pl-5">
+        {achievements.map((line) => (
+          <li key={line}>{line}</li>
         ))}
       </ul>
-    </li>
+    </div>
   );
 };
 
-const JobItem: React.FunctionComponent<{
-  jobItem: JobItemType;
-}> = ({ jobItem }) => {
+const JobItem = ({ jobItem }: { jobItem: JobItemType }) => {
   const { company, yearStart, yearEnd, city, jobTitle, jobDescription } =
     jobItem;
 
   return (
-    <li className="liJobItem">
-      <div className="jobItem">
-        <div className="jobItemFirstLine">
-          <h3>{company}</h3>
-          <p className="employment-years">{`${yearStart} – ${yearEnd ?? ""}`}</p>
+    <li className="mt-12 first:mt-0 print:mt-8 print:break-inside-avoid print:first:mt-0">
+      <div>
+        <div className="flex flex-wrap justify-between gap-1">
+          <h3 className="mb-1 font-sans text-xl font-bold leading-tight print:mb-0 print:text-[0.8rem]">
+            {company}
+          </h3>
+          <p className="mb-2 print:mb-0">{`${yearStart} – ${yearEnd ?? ""}`}</p>
         </div>
-        {city && <p style={{ fontStyle: "italic" }}>{city}</p>}
-        <JobTitle title={jobTitle} />
+        {city && <p className="mb-2 italic">{city}</p>}
+        {jobTitle ? <p className="mb-2 italic">{jobTitle}</p> : null}
         <div>
-          <ul className="jobItemUl">
-            {jobDescription.map((item, i) => (
-              <LineItem key={i} item={item} />
-            ))}
-          </ul>
+          {jobDescription.map((item, i) => (
+            <LineItem key={i} item={item} />
+          ))}
         </div>
       </div>
     </li>

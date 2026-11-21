@@ -2,7 +2,11 @@
 node_modules/
 jspm_packages/
 .cache/
-public/
+.next/
+out/
+public/cv.pdf
+public/cv-western.pdf
+*.tsbuildinfo
 launch.json
 
 # Logs

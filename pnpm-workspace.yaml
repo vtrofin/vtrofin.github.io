@@ -1,0 +1,5 @@
+minimumReleaseAgeExclude:
+  - lucide-react@1.77.0
+
+allowBuilds:
+  puppeteer: true

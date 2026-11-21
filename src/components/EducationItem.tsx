@@ -1,22 +1,15 @@
-import React from "react";
 import { EducationItemType } from "@typedefs/propTypes";
 
-interface Props {
+const EducationItem = ({
+  educationItem,
+}: {
   educationItem: EducationItemType;
-}
-
-const EducationItem: React.FunctionComponent<Props> = ({ educationItem }) => {
+}) => {
   const { yearStart, yearEnd, school } = educationItem;
 
   return (
     <li>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          flexWrap: "wrap",
-        }}
-      >
+      <div className="flex flex-wrap justify-between">
         <div>{school}</div>
         <div>{`${yearStart} - ${yearEnd}`}</div>
       </div>

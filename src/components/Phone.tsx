@@ -1,46 +1,60 @@
-import React, { useState, useEffect, useRef } from "react";
-import { CSSTransition } from "react-transition-group";
+"use client";
 
-const Phone: React.FunctionComponent<{ phone: string }> = ({ phone = "" }) => {
+import { useEffect, useState } from "react";
+
+const Phone = ({ phone = "" }: { phone: string }) => {
   const [showNumber, setShowNumber] = useState(false);
-  const nodeRef = useRef<HTMLParagraphElement>(null);
-  // least effort animation
-  // see http://reactcommunity.org/react-transition-group/css-transition
-  // minor transition issue on afterprint but not a big deal
-  // expected behavior -> button to render after transition ended
-  useEffect(() => {
-    window.addEventListener("beforeprint", () => setShowNumber(true));
-    window.addEventListener("afterprint", () => setShowNumber(false));
+  const [visible, setVisible] = useState(false);
 
+  useEffect(() => {
+    if (!showNumber) {
+      setVisible(false);
+      return;
+    }
+    let second = 0;
+    const first = requestAnimationFrame(() => {
+      second = requestAnimationFrame(() => setVisible(true));
+    });
     return () => {
-      window.removeEventListener("beforeprint", () => setShowNumber(true));
-      window.removeEventListener("afterprint", () => setShowNumber(false));
+      cancelAnimationFrame(first);
+      cancelAnimationFrame(second);
+    };
+  }, [showNumber]);
+
+  useEffect(() => {
+    const show = () => setShowNumber(true);
+    const hide = () => setShowNumber(false);
+    window.addEventListener("beforeprint", show);
+    window.addEventListener("afterprint", hide);
+    return () => {
+      window.removeEventListener("beforeprint", show);
+      window.removeEventListener("afterprint", hide);
     };
   }, []);
 
   return (
-    <div>
+    <>
       {!showNumber && (
-        <div
-          className="phone-number-button"
+        <button
+          type="button"
+          className="mb-3 cursor-pointer rounded-sm bg-[#f2f2f2] px-2 py-1 text-xl print:hidden dark:bg-zinc-800"
           onClick={() => setShowNumber(true)}
         >
           Phone number
-        </div>
+        </button>
       )}
-      <CSSTransition
-        nodeRef={nodeRef}
-        timeout={300}
-        in={showNumber}
-        classNames="phone-number"
-        onExited={() => setShowNumber(false)}
-        unmountOnExit
+      <p
+        className={`text-base transition duration-300 ease sm:text-xl print:mb-0 print:block print:scale-100 print:text-[0.75rem] print:leading-[1.45rem] print:opacity-100 ${
+          showNumber
+            ? visible
+              ? "mb-3 scale-100 opacity-100"
+              : "mb-3 scale-90 opacity-0"
+            : "hidden"
+        }`}
       >
-        <p ref={nodeRef} className="phone-number">
-          {phone}
-        </p>
-      </CSSTransition>
-    </div>
+        {phone}
+      </p>
+    </>
   );
 };
 
