@@ -12,22 +12,22 @@ const GeneralDetails = ({
   const status = propStatus ?? `Romanian national living in ${location}`;
 
   return (
-    <header className="flex flex-col print:flex-row print:justify-between min-[600px]:flex-row min-[600px]:justify-between">
-      <div className="mb-2 flex flex-col items-start justify-center px-4 min-[600px]:w-3/4 min-[600px]:justify-center min-[600px]:px-5 print:w-3/4 print:px-5">
-        <h1 className="mb-6 font-sans text-[clamp(1.8rem,5vw,2.6rem)] font-bold leading-[1.1] min-[600px]:text-[2.6rem] print:mb-4 print:text-[2rem]">
+    <header className="flex flex-col print:flex-row print:justify-between sm:flex-row sm:justify-between">
+      <div className="mb-2 flex flex-col items-start justify-center px-4 print:w-3/4 print:px-5 sm:w-3/4 sm:justify-center sm:px-5">
+        <h1 className="mb-6 font-sans text-3xl font-bold leading-tight print:mb-4 print:text-[2rem] sm:text-4xl">
           {name}
         </h1>
-        <h3 className="mb-[1.45rem] font-sans text-[1.38316rem] font-bold leading-[1.1] print:mb-4 print:text-[1.5rem]">
+        <h3 className="mb-6 font-sans text-2xl font-bold leading-tight print:mb-4 print:text-[1.5rem]">
           トロフィン ビクトル
         </h3>
-        <p className="mb-[0.7rem] font-sans text-base font-semibold text-[#444] dark:text-zinc-300 print:text-[0.75rem] print:leading-[1.45rem]">
+        <p className="mb-3 font-sans text-base font-semibold text-[#444] dark:text-zinc-300 print:text-[0.75rem] print:leading-[1.45rem]">
           {status}
         </p>
-        <p className="family-status mb-[0.7rem] text-[clamp(1rem,3.5vw,1.3rem)] min-[600px]:text-[1.3rem] print:mb-0 print:text-[0.75rem] print:leading-[1.45rem]">
+        <p className="family-status mb-3 text-base print:mb-0 print:text-[0.75rem] print:leading-[1.45rem] sm:text-xl">
           Married, one child &nbsp;|&nbsp; Age: {getAge()}
         </p>
         <Phone phone={phone} />
-        <p className="mb-[0.7rem] hidden text-[clamp(1rem,3.5vw,1.3rem)] print:block print:text-[0.75rem] print:leading-[1.45rem]">
+        <p className="mb-3 hidden text-base print:block print:text-[0.75rem] print:leading-[1.45rem] sm:text-xl">
           {email}
         </p>
         <div className="mt-2 flex flex-wrap items-center gap-5 print:hidden">

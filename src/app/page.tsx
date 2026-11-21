@@ -20,10 +20,10 @@ export default function Page() {
   }
 
   return (
-    <main className="mx-auto mt-[50px] max-w-[960px] px-[1.0875rem] pb-[1.45rem] print:m-0 print:px-[1.0875rem] print:py-0">
+    <main className="mx-auto mt-12 max-w-4xl px-4 pb-6 print:m-0 print:px-[1.0875rem] print:py-0">
       <div className="mb-2 flex items-center justify-between gap-4 print:hidden">
         <ThemeToggle />
-        <p className="font-sans text-[0.8rem] leading-none text-[#888] dark:text-zinc-400">
+        <p className="font-sans text-xs leading-none text-[#888] dark:text-zinc-400">
           Viewing Victor&apos;s CV —{" "}
           <a
             className="pdf-default text-[#555] dark:text-zinc-300"

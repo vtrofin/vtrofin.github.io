@@ -11,7 +11,7 @@ const EmploymentSection = ({
 }) => (
   <section>
     <SectionSubtitle subtitleText={subtitleText} />
-    <ul className="ml-[0.45rem] list-none">
+    <ul className="ml-2 list-none">
       {jobs.map((jobItem) => (
         <JobItem key={jobItem.company + jobItem.yearStart} jobItem={jobItem} />
       ))}

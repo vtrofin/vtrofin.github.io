@@ -11,8 +11,8 @@ const LineItem = ({ item }: { item: JobDescriptionType }) => {
 
   const { description, achievements } = item;
   return (
-    <div className="py-[0.7rem] print:py-[0.2rem]">
-      <p className="mb-[0.35rem] print:mb-0">{description}</p>
+    <div className="py-3 print:py-[0.2rem]">
+      <p className="mb-1.5 print:mb-0">{description}</p>
       <ul className="list-disc pl-5">
         {achievements.map((line) => (
           <li key={line}>{line}</li>
@@ -30,13 +30,13 @@ const JobItem = ({ jobItem }: { jobItem: JobItemType }) => {
     <li className="mt-12 first:mt-0 print:mt-8 print:break-inside-avoid print:first:mt-0">
       <div>
         <div className="flex flex-wrap justify-between gap-1">
-          <h3 className="mb-1 font-sans text-[1.2rem] font-bold leading-[1.1] print:mb-0 print:text-[0.8rem]">
+          <h3 className="mb-1 font-sans text-xl font-bold leading-tight print:mb-0 print:text-[0.8rem]">
             {company}
           </h3>
-          <p className="mb-[0.45rem] print:mb-0">{`${yearStart} – ${yearEnd ?? ""}`}</p>
+          <p className="mb-2 print:mb-0">{`${yearStart} – ${yearEnd ?? ""}`}</p>
         </div>
-        {city && <p className="mb-[0.45rem] italic">{city}</p>}
-        {jobTitle ? <p className="mb-[0.45rem] italic">{jobTitle}</p> : null}
+        {city && <p className="mb-2 italic">{city}</p>}
+        {jobTitle ? <p className="mb-2 italic">{jobTitle}</p> : null}
         <div>
           {jobDescription.map((item, i) => (
             <LineItem key={i} item={item} />
