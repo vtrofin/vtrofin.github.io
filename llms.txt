@@ -45,5 +45,5 @@ See the full process on the homepage.
 - [Repository](https://github.com/victor-trofin/personal-website)
 
 ---
-Last updated: 2026-10-06
+Last updated: 2026-11-21
 Generated following https://llmstxt.org/ and Chrome Lighthouse agentic browsing standards.
