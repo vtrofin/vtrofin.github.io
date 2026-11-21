@@ -1,7 +1,8 @@
 "use client";
 
+import { useDismiss } from "@/hooks/useDismiss";
 import { MoonIcon, SunIcon } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 type Scheme = "light" | "dark";
 
@@ -23,29 +24,13 @@ function applyScheme(scheme: Scheme) {
 export function ThemeToggle() {
   const [scheme, setScheme] = useState<Scheme>("light");
   const [open, setOpen] = useState(false);
-  const rootRef = useRef<HTMLDivElement>(null);
+  const rootRef = useDismiss<HTMLDivElement>(open, () => setOpen(false));
 
   useEffect(() => {
     setScheme(
       document.documentElement.classList.contains("dark") ? "dark" : "light",
     );
   }, []);
-
-  useEffect(() => {
-    if (!open) return;
-    function onPointerDown(event: PointerEvent) {
-      if (!rootRef.current?.contains(event.target as Node)) setOpen(false);
-    }
-    function onKey(event: KeyboardEvent) {
-      if (event.key === "Escape") setOpen(false);
-    }
-    document.addEventListener("pointerdown", onPointerDown);
-    document.addEventListener("keydown", onKey);
-    return () => {
-      document.removeEventListener("pointerdown", onPointerDown);
-      document.removeEventListener("keydown", onKey);
-    };
-  }, [open]);
 
   function choose(next: Scheme) {
     applyScheme(next);
