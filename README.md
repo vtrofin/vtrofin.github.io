@@ -18,14 +18,19 @@ Night view is the bulb in the top corner. It is stored in the browser.
 
 ## Deploy
 
-GitHub Pages hosts the site at https://vtrofin.github.io. Do not deploy this repo to Vercel. Vercel cannot serve that hostname.
+Run the deploy script from `master`. GitHub Pages publishes the site from the `gh-pages` branch at https://vtrofin.github.io.
 
-In the repo settings, Pages must stay on **Deploy from a branch**, branch `gh-pages`, folder `/`. Do not switch the source to GitHub Actions. Do not delete the `gh-pages` branch.
+### First time
 
-`master` holds the source. `gh-pages` holds the built files. Deploy from `master` after you merge.
+1. Check out `master`.
+2. Do not delete the `gh-pages` branch.
+3. In the repo settings, set Pages to publish from the `gh-pages` branch, folder `/`. [![Pages setting](https://i.gyazo.com/220155689821d4641e45d8b37160dd8c.png)](https://gyazo.com/220155689821d4641e45d8b37160dd8c)
+4. Put `PHONE` and `EMAIL` in `.env.production`.
+5. Run `pnpm install`.
+6. Run `pnpm deploy`.
 
-1. Put `PHONE` and `EMAIL` in `.env.production`. The build writes those values into the HTML and the PDFs.
-2. Merge the change into `master` and check out `master`.
+### Every time after that
+
+1. Merge your changes into `master`.
+2. Check out `master`.
 3. Run `pnpm deploy`.
-
-`pnpm deploy` builds a static site in `out/`, prints `cv.pdf` and `cv-western.pdf`, and pushes `out/` to `gh-pages`. When the Pages build finishes, https://vtrofin.github.io serves that commit.
