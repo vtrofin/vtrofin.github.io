@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-serif: georgia, serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+
+html {
+  font-size: 112.5%;
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 100%;
+  }
+}
+
+@media print {
+  html.dark,
+  html.dark body {
+    background: white !important;
+    color: rgba(0, 0, 0, 0.8) !important;
+  }
+
+  main li,
+  main p {
+    font-size: 0.75rem;
+    margin-bottom: 0;
+  }
+
+  main a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+@page {
+  margin: 1cm;
+}

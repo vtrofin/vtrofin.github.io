@@ -1,46 +1,37 @@
-import React, { useState, useEffect, useRef } from "react";
-import { CSSTransition } from "react-transition-group";
+"use client";
 
-const Phone: React.FunctionComponent<{ phone: string }> = ({ phone = "" }) => {
+import { useEffect, useState } from "react";
+
+const Phone = ({ phone = "" }: { phone: string }) => {
   const [showNumber, setShowNumber] = useState(false);
-  const nodeRef = useRef<HTMLParagraphElement>(null);
-  // least effort animation
-  // see http://reactcommunity.org/react-transition-group/css-transition
-  // minor transition issue on afterprint but not a big deal
-  // expected behavior -> button to render after transition ended
-  useEffect(() => {
-    window.addEventListener("beforeprint", () => setShowNumber(true));
-    window.addEventListener("afterprint", () => setShowNumber(false));
 
+  useEffect(() => {
+    const show = () => setShowNumber(true);
+    const hide = () => setShowNumber(false);
+    window.addEventListener("beforeprint", show);
+    window.addEventListener("afterprint", hide);
     return () => {
-      window.removeEventListener("beforeprint", () => setShowNumber(true));
-      window.removeEventListener("afterprint", () => setShowNumber(false));
+      window.removeEventListener("beforeprint", show);
+      window.removeEventListener("afterprint", hide);
     };
   }, []);
 
-  return (
-    <div>
-      {!showNumber && (
-        <div
-          className="phone-number-button"
-          onClick={() => setShowNumber(true)}
-        >
-          Phone number
-        </div>
-      )}
-      <CSSTransition
-        nodeRef={nodeRef}
-        timeout={300}
-        in={showNumber}
-        classNames="phone-number"
-        onExited={() => setShowNumber(false)}
-        unmountOnExit
+  if (!showNumber) {
+    return (
+      <button
+        type="button"
+        className="mb-[0.7rem] cursor-pointer rounded-[3px] bg-[#f2f2f2] px-2 py-[0.2rem] text-[1.3rem] print:hidden dark:bg-zinc-800"
+        onClick={() => setShowNumber(true)}
       >
-        <p ref={nodeRef} className="phone-number">
-          {phone}
-        </p>
-      </CSSTransition>
-    </div>
+        Phone number
+      </button>
+    );
+  }
+
+  return (
+    <p className="mb-[0.7rem] text-[clamp(1rem,3.5vw,1.3rem)] print:mb-0 print:text-[0.75rem]">
+      {phone}
+    </p>
   );
 };
 

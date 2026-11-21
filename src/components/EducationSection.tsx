@@ -1,17 +1,22 @@
-import React from "react";
 import EducationItem from "@components/EducationItem";
-import { EducationItemType } from "@typedefs/propTypes";
 import SectionSubtitle from "@components/SectionSubtitle";
+import { EducationItemType } from "@typedefs/propTypes";
 
-const EducationSection: React.FunctionComponent<{
+const EducationSection = ({
+  education,
+  subtitleText,
+}: {
   education: EducationItemType[];
   subtitleText: string;
-}> = ({ education, subtitleText }) => (
+}) => (
   <section>
     <SectionSubtitle subtitleText={subtitleText} />
     <ul>
-      {education.map((educationItem, index) => (
-        <EducationItem key={index} educationItem={educationItem} />
+      {education.map((educationItem) => (
+        <EducationItem
+          key={educationItem.school}
+          educationItem={educationItem}
+        />
       ))}
     </ul>
   </section>

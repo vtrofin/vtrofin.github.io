@@ -1,50 +1,41 @@
-import { JobItemType, JobDescriptionType } from "@typedefs/propTypes";
-import React from "react";
+import { JobDescriptionType, JobItemType } from "@typedefs/propTypes";
 
-const JobTitle: React.FunctionComponent<{ title: string }> = ({ title }) => {
-  return title ? <p style={{ fontStyle: "italic" }}>{title}</p> : null;
-};
-
-const LineItem: React.FunctionComponent<{ item: JobDescriptionType }> = ({
-  item,
-}) => {
+const LineItem = ({ item }: { item: JobDescriptionType }) => {
   if (typeof item === "string") return <li>{item}</li>;
 
   const { description, achievements } = item;
   return (
-    <li className="no-indent">
+    <li className="-ml-[1.45rem] list-none py-[0.7rem] print:py-[0.2rem]">
       {description}
-      <ul className="achievements">
-        {achievements.map((line, i) => (
-          <li key={i}>{line}</li>
+      <ul className="mt-0 list-disc print:mt-0">
+        {achievements.map((line) => (
+          <li key={line}>{line}</li>
         ))}
       </ul>
     </li>
   );
 };
 
-const JobItem: React.FunctionComponent<{
-  jobItem: JobItemType;
-}> = ({ jobItem }) => {
+const JobItem = ({ jobItem }: { jobItem: JobItemType }) => {
   const { company, yearStart, yearEnd, city, jobTitle, jobDescription } =
     jobItem;
 
   return (
-    <li className="liJobItem">
-      <div className="jobItem">
-        <div className="jobItemFirstLine">
-          <h3>{company}</h3>
-          <p className="employment-years">{`${yearStart} – ${yearEnd ?? ""}`}</p>
+    <li className="mt-12 first:mt-0 print:mt-5 print:first:mt-0">
+      <div>
+        <div className="flex flex-wrap justify-between gap-1">
+          <h3 className="mb-1 font-sans text-[1.2rem] font-bold leading-[1.1] print:mb-0 print:text-[0.8rem]">
+            {company}
+          </h3>
+          <p className="mb-[0.45rem] print:mb-0">{`${yearStart} – ${yearEnd ?? ""}`}</p>
         </div>
-        {city && <p style={{ fontStyle: "italic" }}>{city}</p>}
-        <JobTitle title={jobTitle} />
-        <div>
-          <ul className="jobItemUl">
-            {jobDescription.map((item, i) => (
-              <LineItem key={i} item={item} />
-            ))}
-          </ul>
-        </div>
+        {city && <p className="mb-[0.45rem] italic">{city}</p>}
+        {jobTitle ? <p className="mb-[0.45rem] italic">{jobTitle}</p> : null}
+        <ul className="list-disc">
+          {jobDescription.map((item, i) => (
+            <LineItem key={i} item={item} />
+          ))}
+        </ul>
       </div>
     </li>
   );

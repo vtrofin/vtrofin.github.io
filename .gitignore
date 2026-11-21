@@ -2,7 +2,8 @@
 node_modules/
 jspm_packages/
 .cache/
-public/
+.next/
+*.tsbuildinfo
 launch.json
 
 # Logs

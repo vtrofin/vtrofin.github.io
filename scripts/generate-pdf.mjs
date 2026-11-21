@@ -1,7 +1,7 @@
 #!/usr/bin/env node
-// Generates public/cv.pdf by spinning up a local server over the built site
+// Generates public/cv.pdf by spinning up the built Next site
 // and printing it headlessly via Puppeteer.
-// Run after `gatsby build`: node scripts/generate-pdf.js
+// Run after `next build`: node scripts/generate-pdf.mjs
 
 import puppeteer from "puppeteer";
 import { spawn } from "child_process";
@@ -14,7 +14,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const OUTPUT = resolve(__dirname, "../public/cv.pdf");
 const OUTPUT_WESTERN = resolve(__dirname, "../public/cv-western.pdf");
-const GATSBY_BIN = resolve(__dirname, "../node_modules/.bin/gatsby");
+const NEXT_BIN = resolve(__dirname, "../node_modules/.bin/next");
 
 function waitForServer(retries = 30, delay = 500) {
   return new Promise((resolve, reject) => {
@@ -33,7 +33,7 @@ function waitForServer(retries = 30, delay = 500) {
 
 async function generate() {
   console.log("Starting local server…");
-  const server = spawn(GATSBY_BIN, ["serve", "-p", String(PORT)], {
+  const server = spawn(NEXT_BIN, ["start", "-p", String(PORT)], {
     cwd: resolve(__dirname, ".."),
     stdio: "ignore",
   });

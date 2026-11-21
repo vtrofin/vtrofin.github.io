@@ -1,26 +1,21 @@
-import React from "react";
 import JobItem from "@components/JobItem";
-import { JobItemType } from "@typedefs/propTypes";
 import SectionSubtitle from "@components/SectionSubtitle";
+import { JobItemType } from "@typedefs/propTypes";
 
-interface Props {
-  jobs: JobItemType[];
-  subtitleText: string;
-}
-
-const EmploymentSection: React.FunctionComponent<Props> = ({
+const EmploymentSection = ({
   jobs,
   subtitleText,
+}: {
+  jobs: JobItemType[];
+  subtitleText: string;
 }) => (
   <section>
     <SectionSubtitle subtitleText={subtitleText} />
-    <div className="employmentSection">
-      <ul className="jobsUl">
-        {jobs.map((jobItem, index) => (
-          <JobItem key={index} jobItem={jobItem} />
-        ))}
-      </ul>
-    </div>
+    <ul className="ml-[0.45rem] list-none">
+      {jobs.map((jobItem) => (
+        <JobItem key={jobItem.company + jobItem.yearStart} jobItem={jobItem} />
+      ))}
+    </ul>
   </section>
 );
 
