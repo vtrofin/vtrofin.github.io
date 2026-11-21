@@ -14,8 +14,6 @@ EMAIL=your email address
 pnpm dev
 ```
 
-Night view is the bulb in the top corner. It is stored in the browser.
-
 ## Deploy
 
 Run the deploy script from `master`. GitHub Pages publishes the site from the `gh-pages` branch at https://vtrofin.github.io.

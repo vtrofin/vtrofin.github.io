@@ -98,4 +98,4 @@ Location: Kyoto, Japan. Currently at Scoville.
 
 ---
 This llms-full.txt is generated as companion to /llms.txt per llmstxt.org recommendations.
-Last updated: 2026-10-06
+Last updated: 2026-11-21
