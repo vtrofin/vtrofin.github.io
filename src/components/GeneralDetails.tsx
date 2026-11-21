@@ -5,10 +5,8 @@ import { getAge } from "../utils/dateUtils";
 
 const GeneralDetails = ({
   personalDetails,
-  western = false,
 }: {
   personalDetails: PersonalDetailsType;
-  western?: boolean;
 }) => {
   const { name, email, phone, status: propStatus, location } = personalDetails;
   const status = propStatus ?? `Romanian national living in ${location}`;
@@ -22,16 +20,14 @@ const GeneralDetails = ({
         <h3 className="mb-[1.45rem] font-sans text-[1.38316rem] font-bold leading-[1.1] print:mb-4 print:text-[1.5rem]">
           トロフィン ビクトル
         </h3>
-        <p className="mb-[0.7rem] font-sans text-base font-semibold text-[#444] dark:text-zinc-300 print:text-[0.75rem]">
+        <p className="mb-[0.7rem] font-sans text-base font-semibold text-[#444] dark:text-zinc-300 print:text-[0.75rem] print:leading-[1.45rem]">
           {status}
         </p>
-        {!western && (
-          <p className="mb-[0.7rem] text-[clamp(1rem,3.5vw,1.3rem)] min-[600px]:text-[1.3rem] print:mb-0 print:text-[0.75rem]">
-            Married, one child &nbsp;|&nbsp; Age: {getAge()}
-          </p>
-        )}
+        <p className="family-status mb-[0.7rem] text-[clamp(1rem,3.5vw,1.3rem)] min-[600px]:text-[1.3rem] print:mb-0 print:text-[0.75rem] print:leading-[1.45rem]">
+          Married, one child &nbsp;|&nbsp; Age: {getAge()}
+        </p>
         <Phone phone={phone} />
-        <p className="mb-[0.7rem] hidden text-[clamp(1rem,3.5vw,1.3rem)] print:block print:text-[0.75rem]">
+        <p className="mb-[0.7rem] hidden text-[clamp(1rem,3.5vw,1.3rem)] print:block print:text-[0.75rem] print:leading-[1.45rem]">
           {email}
         </p>
         <div className="mt-2 flex flex-wrap items-center gap-5 print:hidden">

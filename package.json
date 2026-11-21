@@ -5,9 +5,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
+    "build": "next build && node scripts/generate-pdf.mjs",
     "generate-pdf": "node scripts/generate-pdf.mjs",
+    "deploy": "pnpm build && pnpm exec gh-pages -d out --dotfiles --nojekyll -m Updates",
     "ts:check": "tsc --noEmit"
   },
   "repository": {
@@ -28,6 +28,7 @@
     "@types/node": "24.19.2",
     "@types/react": "19.3.0",
     "@types/react-dom": "19.3.0",
+    "gh-pages": "^6.3.0",
     "puppeteer": "25.17.0",
     "tailwindcss": "4.3.5",
     "typescript": "6.0.3"

@@ -31,10 +31,21 @@ html {
     margin-bottom: 0;
   }
 
+  main li {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
   main a {
     color: inherit;
     text-decoration: none;
   }
+}
+
+html[data-western="true"] .family-status,
+html[data-western="true"] .pdf-default,
+html:not([data-western="true"]) .pdf-western {
+  display: none;
 }
 
 @page {

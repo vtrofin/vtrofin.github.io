@@ -37,6 +37,7 @@ export const metadata: Metadata = {
 };
 
 const themeScript = `(function(){try{if(localStorage.getItem("theme")==="dark"){document.documentElement.classList.add("dark")}}catch(e){}})()`;
+const westernScript = `(function(){try{if(new URLSearchParams(location.search).get("western")==="true"){document.documentElement.setAttribute("data-western","true")}}catch(e){}})()`;
 
 export default function RootLayout({
   children,
@@ -47,6 +48,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+        <script dangerouslySetInnerHTML={{ __html: westernScript }} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

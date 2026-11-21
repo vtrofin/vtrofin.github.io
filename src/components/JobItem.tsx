@@ -1,18 +1,24 @@
 import { JobDescriptionType, JobItemType } from "@typedefs/propTypes";
 
 const LineItem = ({ item }: { item: JobDescriptionType }) => {
-  if (typeof item === "string") return <li>{item}</li>;
+  if (typeof item === "string") {
+    return (
+      <ul className="list-disc pl-5">
+        <li>{item}</li>
+      </ul>
+    );
+  }
 
   const { description, achievements } = item;
   return (
-    <li className="-ml-[1.45rem] list-none py-[0.7rem] print:py-[0.2rem]">
-      {description}
-      <ul className="mt-0 list-disc print:mt-0">
+    <div className="py-[0.7rem] print:py-[0.2rem]">
+      <p className="mb-[0.35rem] print:mb-0">{description}</p>
+      <ul className="list-disc pl-5">
         {achievements.map((line) => (
           <li key={line}>{line}</li>
         ))}
       </ul>
-    </li>
+    </div>
   );
 };
 
@@ -21,7 +27,7 @@ const JobItem = ({ jobItem }: { jobItem: JobItemType }) => {
     jobItem;
 
   return (
-    <li className="mt-12 first:mt-0 print:mt-5 print:first:mt-0">
+    <li className="mt-12 first:mt-0 print:mt-8 print:break-inside-avoid print:first:mt-0">
       <div>
         <div className="flex flex-wrap justify-between gap-1">
           <h3 className="mb-1 font-sans text-[1.2rem] font-bold leading-[1.1] print:mb-0 print:text-[0.8rem]">
@@ -31,11 +37,11 @@ const JobItem = ({ jobItem }: { jobItem: JobItemType }) => {
         </div>
         {city && <p className="mb-[0.45rem] italic">{city}</p>}
         {jobTitle ? <p className="mb-[0.45rem] italic">{jobTitle}</p> : null}
-        <ul className="list-disc">
+        <div>
           {jobDescription.map((item, i) => (
             <LineItem key={i} item={item} />
           ))}
-        </ul>
+        </div>
       </div>
     </li>
   );

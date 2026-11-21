@@ -3,6 +3,9 @@ node_modules/
 jspm_packages/
 .cache/
 .next/
+out/
+public/cv.pdf
+public/cv-western.pdf
 *.tsbuildinfo
 launch.json
 

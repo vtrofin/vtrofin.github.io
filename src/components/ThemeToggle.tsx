@@ -68,7 +68,7 @@ export function ThemeToggle() {
       {open && (
         <div
           role="menu"
-          className="absolute right-0 z-50 mt-1 min-w-32 rounded-md border border-neutral-200 bg-white p-1 text-sm text-neutral-900 shadow-md dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-100"
+          className="absolute left-0 z-50 mt-1 min-w-32 rounded-md border border-neutral-200 bg-white p-1 text-sm text-neutral-900 shadow-md dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-100"
         >
           {(["light", "dark"] as const).map((value) => (
             <button

@@ -12,36 +12,37 @@ import {
   technicalSkills,
 } from "@/data";
 
-export default async function Page({
-  searchParams,
-}: {
-  searchParams: Promise<{ western?: string }>;
-}) {
-  const params = await searchParams;
-  const western = params.western === "true";
-  const email = process.env.EMAIL ?? "";
-  const phone = process.env.PHONE ?? "";
+export default function Page() {
+  const email = process.env.EMAIL?.trim() ?? "";
+  const phone = process.env.PHONE?.trim() ?? "";
+  if (!email || !phone) {
+    throw new Error("Set EMAIL and PHONE before building the CV");
+  }
 
   return (
-    <main className="mx-auto mt-[50px] max-w-[960px] px-[1.0875rem] pb-[1.45rem] print:m-0 print:p-0">
-      <div className="mb-2 flex items-start justify-between gap-4">
-        <p className="ml-auto font-sans text-[0.8rem] text-[#888] print:hidden dark:text-zinc-400">
+    <main className="mx-auto mt-[50px] max-w-[960px] px-[1.0875rem] pb-[1.45rem] print:m-0 print:px-[1.0875rem] print:py-0">
+      <div className="mb-2 flex items-center justify-between gap-4 print:hidden">
+        <ThemeToggle />
+        <p className="font-sans text-[0.8rem] leading-none text-[#888] dark:text-zinc-400">
           Viewing Victor&apos;s CV —{" "}
           <a
-            className="text-[#555] dark:text-zinc-300"
-            href={western ? "/cv-western.pdf" : "/cv.pdf"}
-            download={
-              western ? "Victor_Trofin_CV_Western.pdf" : "Victor_Trofin_CV.pdf"
-            }
+            className="pdf-default text-[#555] dark:text-zinc-300"
+            href="/cv.pdf"
+            download="Victor_Trofin_CV.pdf"
+          >
+            download as PDF
+          </a>
+          <a
+            className="pdf-western text-[#555] dark:text-zinc-300"
+            href="/cv-western.pdf"
+            download="Victor_Trofin_CV_Western.pdf"
           >
             download as PDF
           </a>
         </p>
-        <ThemeToggle />
       </div>
       <GeneralDetails
         personalDetails={{ ...personalDetails, email, phone }}
-        western={western}
       />
       <About />
       <CompetencyGrid items={skills} subtitleText="Abilities" />

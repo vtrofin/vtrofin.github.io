@@ -11,7 +11,7 @@ const EducationSection = ({
 }) => (
   <section>
     <SectionSubtitle subtitleText={subtitleText} />
-    <ul>
+    <ul className="list-disc pl-5">
       {education.map((educationItem) => (
         <EducationItem
           key={educationItem.school}
