@@ -20,7 +20,7 @@ export default function Page() {
   }
 
   return (
-    <main className="mx-auto mt-12 max-w-4xl px-4 pb-6 print:m-0 print:px-[1.0875rem] print:py-0">
+    <main className="mx-auto mt-12 max-w-4xl px-4 pb-24 print:m-0 print:px-[1.0875rem] print:py-0">
       <div className="mb-2 flex items-center justify-between gap-4 print:hidden">
         <ThemeToggle />
         <p className="font-sans text-xs leading-none text-[#888] dark:text-zinc-400">
