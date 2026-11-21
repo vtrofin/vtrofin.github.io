@@ -4,6 +4,22 @@ import { useEffect, useState } from "react";
 
 const Phone = ({ phone = "" }: { phone: string }) => {
   const [showNumber, setShowNumber] = useState(false);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    if (!showNumber) {
+      setVisible(false);
+      return;
+    }
+    let second = 0;
+    const first = requestAnimationFrame(() => {
+      second = requestAnimationFrame(() => setVisible(true));
+    });
+    return () => {
+      cancelAnimationFrame(first);
+      cancelAnimationFrame(second);
+    };
+  }, [showNumber]);
 
   useEffect(() => {
     const show = () => setShowNumber(true);
@@ -28,11 +44,13 @@ const Phone = ({ phone = "" }: { phone: string }) => {
         </button>
       )}
       <p
-        className={
+        className={`text-base transition duration-300 ease sm:text-xl print:mb-0 print:block print:scale-100 print:text-[0.75rem] print:leading-[1.45rem] print:opacity-100 ${
           showNumber
-            ? "mb-3 text-base print:mb-0 print:text-[0.75rem] print:leading-[1.45rem] sm:text-xl"
-            : "mb-3 hidden text-base print:mb-0 print:block print:text-[0.75rem] print:leading-[1.45rem] sm:text-xl"
-        }
+            ? visible
+              ? "mb-3 scale-100 opacity-100"
+              : "mb-3 scale-90 opacity-0"
+            : "hidden"
+        }`}
       >
         {phone}
       </p>
